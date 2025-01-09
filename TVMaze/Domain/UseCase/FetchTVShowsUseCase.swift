@@ -7,6 +7,7 @@
 
 import Foundation
 
+// MARK: Use Case
 protocol FetchTVShowsUseCaseProtocol {
     func execute(page: Int) async throws -> [TVShow]
 }
@@ -20,5 +21,12 @@ final class FetchTVShowsUseCase: FetchTVShowsUseCaseProtocol {
 
     func execute(page: Int) async throws -> [TVShow] {
         return try await repository.fetchShows(page: page)
+    }
+}
+
+// MARK: - Mock
+final class FetchTVShowsUseCaseMock: FetchTVShowsUseCaseProtocol {
+    func execute(page: Int) async throws -> [TVShow] {
+        TVShow.mockShows()
     }
 }

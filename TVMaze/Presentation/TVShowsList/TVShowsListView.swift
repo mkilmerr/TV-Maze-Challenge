@@ -107,12 +107,6 @@ enum NavigationState {
     case detail(TVShow)
 }
 
-final class FetchTVShowsUseCaseMock: FetchTVShowsUseCaseProtocol {
-    func execute(page: Int) async throws -> [TVShow] {
-        TVShow.mockShows()
-    }
-}
-
 #Preview {
     TVShowsListView(viewModel: .init(fetchTVShowsUseCase: FetchTVShowsUseCaseMock()))
 }
