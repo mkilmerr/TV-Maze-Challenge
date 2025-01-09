@@ -83,7 +83,7 @@ struct TVShowsListView: View {
             }
             
             if let summary = show.summary {
-                Text(summary)
+                Text(summary.removeHTML())
                     .font(.headline)
                     .lineLimit(2)
                     .foregroundColor(.secondary)

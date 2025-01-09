@@ -45,7 +45,7 @@ struct TVShowDetailView: View {
                     .bold()
                 
                 if let summary = viewModel.show.summary {
-                    Text(summary)
+                    Text(summary.removeHTML())
                         .font(.body)
                 }
                 subHeader()
@@ -59,7 +59,7 @@ struct TVShowDetailView: View {
             HStack {
                 VStack(alignment: .leading) {
                     HStack {
-                        infoPill(
+                        Pill(
                             text: "Status: \(viewModel.show.status)",
                             color: .blue
                         )
@@ -75,13 +75,13 @@ struct TVShowDetailView: View {
                    
 
                     if !viewModel.show.genres.isEmpty {
-                        infoPill(
+                        Pill(
                             text: "Genres: \(viewModel.show.genres.joined(separator: ", "))",
                             color: .green
                         )
                     }
                     
-                    infoPill(
+                    Pill(
                         text: "Schedule: \(viewModel.show.schedule.days.joined(separator: ", ")) at \(viewModel.show.schedule.time)",
                         color: .orange
                     )
@@ -90,16 +90,6 @@ struct TVShowDetailView: View {
             }
         }
         .padding(.top, 16)
-    }
-    
-    private func infoPill(text: String, color: Color) -> some View {
-        Text(text)
-            .bold()
-            .font(.subheadline)
-            .padding(.horizontal, 8)
-            .padding(.vertical, 4)
-            .background(color.opacity(0.5))
-            .cornerRadius(16)
     }
 
     private var seasonsList: some View {
