@@ -43,6 +43,7 @@ struct EpisodeRowView: View {
         }
         .sheet(isPresented: $openEpisodeDetail) {
             EpisodeDetailView(episode: episode)
+                .presentationDragIndicator(.visible)
         }
     }
 }

@@ -20,8 +20,8 @@ struct EpisodeDetailView: View {
                 Text(episode.name)
                     .bold()
                     .font(.title)
-                    .padding(.top, 16)
-                
+                    .padding(.top, 20)
+
                 if let image = episode.image?.original {
                     RemoteImage(url: URL(string: image), size: .small)
                 }
@@ -46,6 +46,7 @@ struct EpisodeDetailView: View {
             }
             .padding(.horizontal, 16)
         }
+        .background(Color.background)
     }
 }
 
