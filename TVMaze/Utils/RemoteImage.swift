@@ -24,24 +24,26 @@ struct RemoteImage: View {
     }
 
     var body: some View {
-        if let url {
-            AsyncImage(url: url) { phase in
-                switch phase {
-                case .empty:
-                    ProgressView()
-                        .frame(width: 300, height: 200)
+        VStack {
+            if let url {
+                AsyncImage(url: url) { phase in
+                    switch phase {
+                    case .empty:
+                        ProgressView()
+                            .frame(width: 300, height: 200)
 
-                case .success(let image):
-                    getImage(by: size, remoteImage: image)
-                    
-                case .failure(_):
-                    placeHolder()
-                @unknown default:
-                    EmptyView()
+                    case .success(let image):
+                        getImage(by: size, remoteImage: image)
+
+                    case .failure(_):
+                        placeHolder()
+                    @unknown default:
+                        EmptyView()
+                    }
                 }
+            } else {
+                placeHolder()
             }
-        } else {
-            placeHolder()
         }
     }
     
@@ -49,7 +51,7 @@ struct RemoteImage: View {
         Image(systemName: "photo")
             .resizable()
             .aspectRatio(contentMode: .fit)
-            .frame(width: 300, height: 200)
+            .frame(height: 100)
             .foregroundColor(.gray)
     }
     
@@ -66,7 +68,9 @@ struct RemoteImage: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .cornerRadius(12)
-                    .frame(width: 300, height: 200)
+                    .frame(height: 300)
+
+
             }
         }
     }

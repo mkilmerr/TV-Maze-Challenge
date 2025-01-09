@@ -71,10 +71,15 @@ struct TVShowsListView: View {
     private func showRow(for show: TVShow) -> some View {
         VStack(alignment: .leading, spacing: 8) {
             Text(show.name)
-                .font(.title)
+                .bold()
+                .font(.largeTitle)
             
-            if let image = show.image?.medium {
-                RemoteImage(url: URL(string: image))
+            if let image = show.image?.original {
+                HStack {
+                    RemoteImage(url: URL(string: image))
+                    Spacer()
+                }
+               
             }
             
             if let summary = show.summary {
@@ -108,5 +113,9 @@ enum NavigationState {
 }
 
 #Preview {
-    TVShowsListView(viewModel: .init(fetchTVShowsUseCase: FetchTVShowsUseCaseMock()))
+    TVShowsListView(
+        viewModel: .init(
+            fetchTVShowsUseCase: FetchTVShowsUseCaseMock()
+        )
+    )
 }
