@@ -1,5 +1,5 @@
 //
-//  HomeView.swift
+//  TVShowsListView.swift
 //  TVMaze
 //
 //  Created by longarinas on 08/01/25.
@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-struct HomeView: View {
-    @StateObject private var viewModel: HomeViewModel
+struct TVShowsListView: View {
+    @StateObject private var viewModel: TVShowsListViewModel
     @State private var navigationState: NavigationState?
 
-    init(viewModel: HomeViewModel) {
+    init(viewModel: TVShowsListViewModel) {
         _viewModel = StateObject(wrappedValue: viewModel)
     }
 
@@ -26,7 +26,7 @@ struct HomeView: View {
                 set: { if !$0 { navigationState = nil } }
             )) {
                 if case .detail(let show) = navigationState {
-                   // ShowDetailView(show: show)
+                    TVShowDetailView(show: show)
                 }
             }
             .onViewDidLoad {
@@ -114,5 +114,5 @@ final class FetchTVShowsUseCaseMock: FetchTVShowsUseCaseProtocol {
 }
 
 #Preview {
-    HomeView(viewModel: .init(fetchTVShowsUseCase: FetchTVShowsUseCaseMock()))
+    TVShowsListView(viewModel: .init(fetchTVShowsUseCase: FetchTVShowsUseCaseMock()))
 }

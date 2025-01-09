@@ -28,7 +28,6 @@ final class NetworkClient: HTTPClient {
         
         var request = URLRequest(url: url)
         request.httpMethod = endpoint.method.rawValue
-//        request.allHTTPHeaderFields = endpoint.headers
         
         let (data, response) = try await session.data(for: request)
         
@@ -43,29 +42,5 @@ final class NetworkClient: HTTPClient {
         } catch {
             throw NetworkError.decodingError
         }
-    }
-}
-
-struct TVShowsEndpoint: Endpoint {
-    let page: Int
-
-    init(page: Int) {
-        self.page = page
-    }
-
-    var path: String {
-        return "/shows"
-    }
-    
-    var method: HTTPMethod {
-        return .get
-    }
-    
-    var headers: [String : String]? {
-        return ["Content-Type": "application/json"]
-    }
-    
-    var queryItems: [URLQueryItem]? {
-        return [URLQueryItem(name: "page", value: String(page))]
     }
 }

@@ -1,5 +1,5 @@
 //
-//  HomeViewModel.swift
+//  TVShowsListViewModel.swift
 //  TVMaze
 //
 //  Created by longarinas on 08/01/25.
@@ -8,7 +8,7 @@
 import SwiftUI
 
 @MainActor
-final class HomeViewModel: ObservableObject {
+final class TVShowsListViewModel: ObservableObject {
     @Published private(set) var tvShows: [TVShow] = []
     @Published private(set) var isLoading: Bool = false
     @Published private(set) var isError: Bool = false

@@ -7,11 +7,20 @@
 
 import SwiftUI
 
+extension RemoteImage {
+    enum Size {
+        case small
+        case big
+    }
+}
+
 struct RemoteImage: View {
     let url: URL?
+    let size: Self.Size
     
-    init(url: URL?) {
+    init(url: URL?, size: Self.Size = .small) {
         self.url = url
+        self.size = size
     }
 
     var body: some View {
@@ -21,12 +30,9 @@ struct RemoteImage: View {
                 case .empty:
                     ProgressView()
                         .frame(width: 300, height: 200)
+
                 case .success(let image):
-                    image
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .cornerRadius(12)
-                        .frame(width: 300, height: 200)
+                    getImage(by: size, remoteImage: image)
                     
                 case .failure(_):
                     placeHolder()
@@ -45,6 +51,24 @@ struct RemoteImage: View {
             .aspectRatio(contentMode: .fit)
             .frame(width: 300, height: 200)
             .foregroundColor(.gray)
+    }
+    
+    private func getImage(by size: Self.Size, remoteImage: Image) -> some View {
+        VStack {
+            switch size {
+            case .big:
+                remoteImage
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .cornerRadius(12)
+            case .small:
+                remoteImage
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .cornerRadius(12)
+                    .frame(width: 300, height: 200)
+            }
+        }
     }
 }
 

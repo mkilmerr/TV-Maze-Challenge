@@ -11,7 +11,7 @@ import SwiftUI
 struct TVMazeApp: App {
     var body: some Scene {
         WindowGroup {
-            HomeView(viewModel: .init(fetchTVShowsUseCase: FetchTVShowsUseCase(repository: TVShowsRepository(networkClient: .init()))))
+            TVShowsListView(viewModel: .init(fetchTVShowsUseCase: FetchTVShowsUseCase(repository: TVShowsRepository(networkClient: .init()))))
         }
     }
 }
