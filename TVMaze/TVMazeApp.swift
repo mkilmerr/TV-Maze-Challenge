@@ -9,21 +9,30 @@ import SwiftUI
 
 @main
 struct TVMazeApp: App {
+    @StateObject private var biometricAuthenticationViewModel = BiometricAuthenticationViewModel.make()
+    
     var body: some Scene {
         WindowGroup {
-            TabView {
-                TVShowsListView.make()
-                    .tabItem {
-                        Label("Shows", systemImage: "tv")
+            Group {
+                if biometricAuthenticationViewModel.isAuthenticated {
+                    TabView {
+                        TVShowsListView.make()
+                            .tabItem {
+                                Label("Shows", systemImage: "tv")
+                            }
+                        
+                        PeopleListView.make()
+                            .tabItem {
+                                Label("People search", systemImage: "magnifyingglass")
+                            }
                     }
-                
-                PeopleListView.make()
-                    .tabItem {
-                        Label("People search", systemImage: "magnifyingglass")
-                    }
+                } else {
+                    BiometricAuthenticationView(
+                        viewModel: biometricAuthenticationViewModel
+                    )
+                }
             }
         }
     }
 }
-
 

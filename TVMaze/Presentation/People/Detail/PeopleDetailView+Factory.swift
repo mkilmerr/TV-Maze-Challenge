@@ -8,7 +8,7 @@
 import Foundation
 
 extension PeopleDetailView {
-    static func make(id: Int) -> PeopleDetailView {
+    static func make(with person: Person) -> PeopleDetailView {
         let fetchGuestCastCreditsRepository = FetchGuestCastCreditsRepository(
             networkClient: .init()
         )
@@ -19,7 +19,7 @@ extension PeopleDetailView {
 
         let viewModel = PeopleDetailViewModel(
             fetchGuestCastCreditUseCase: fetchGuestCastCreditUseCase,
-            personId: id
+            person: person
         )
         
         return .init(viewModel: viewModel)

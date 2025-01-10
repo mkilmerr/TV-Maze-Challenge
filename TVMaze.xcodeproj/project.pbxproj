@@ -41,6 +41,7 @@
 		F71338A72D30A65F00331DDE /* FetchGuestCastCreditsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71338A62D30A65F00331DDE /* FetchGuestCastCreditsUseCase.swift */; };
 		F71338A92D30A76C00331DDE /* PeopleDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71338A82D30A76C00331DDE /* PeopleDetailViewModel.swift */; };
 		F71338AB2D30A88300331DDE /* PeopleDetailView+Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71338AA2D30A88300331DDE /* PeopleDetailView+Factory.swift */; };
+		F71338AD2D30B97000331DDE /* PersonSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71338AC2D30B97000331DDE /* PersonSectionView.swift */; };
 		F7DC14622D2F0AA100CADA62 /* TVMazeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DC14612D2F0AA100CADA62 /* TVMazeApp.swift */; };
 		F7DC14642D2F0AA100CADA62 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DC14632D2F0AA100CADA62 /* ContentView.swift */; };
 		F7DC14662D2F0AA200CADA62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7DC14652D2F0AA200CADA62 /* Assets.xcassets */; };
@@ -66,6 +67,12 @@
 		F7DC149D2D2F265B00CADA62 /* TVShowsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DC149C2D2F265B00CADA62 /* TVShowsListViewModel.swift */; };
 		F7DC14A02D2F2F8300CADA62 /* ViewDidLoadModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DC149F2D2F2F8300CADA62 /* ViewDidLoadModifier.swift */; };
 		F7DC14A42D2F3DF700CADA62 /* RemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DC14A32D2F3DF700CADA62 /* RemoteImage.swift */; };
+		F7FD5B202D31337300ECC57D /* BiometricAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FD5B1F2D31337300ECC57D /* BiometricAuthentication.swift */; };
+		F7FD5B222D3133A100ECC57D /* BiometricAuthenticationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FD5B212D3133A100ECC57D /* BiometricAuthenticationError.swift */; };
+		F7FD5B242D31361D00ECC57D /* BiometricAuthenticationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FD5B232D31361D00ECC57D /* BiometricAuthenticationUseCase.swift */; };
+		F7FD5B272D313A0F00ECC57D /* BiometricAuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FD5B262D313A0F00ECC57D /* BiometricAuthenticationViewModel.swift */; };
+		F7FD5B2A2D313A5600ECC57D /* BiometricAuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FD5B292D313A5600ECC57D /* BiometricAuthenticationView.swift */; };
+		F7FD5B2C2D313A8E00ECC57D /* BiometricAuthenticationViewModel+Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FD5B2B2D313A8E00ECC57D /* BiometricAuthenticationViewModel+Factory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -103,6 +110,7 @@
 		F71338A62D30A65F00331DDE /* FetchGuestCastCreditsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchGuestCastCreditsUseCase.swift; sourceTree = "<group>"; };
 		F71338A82D30A76C00331DDE /* PeopleDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleDetailViewModel.swift; sourceTree = "<group>"; };
 		F71338AA2D30A88300331DDE /* PeopleDetailView+Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PeopleDetailView+Factory.swift"; sourceTree = "<group>"; };
+		F71338AC2D30B97000331DDE /* PersonSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonSectionView.swift; sourceTree = "<group>"; };
 		F7DC145E2D2F0AA100CADA62 /* TVMaze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVMaze.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7DC14612D2F0AA100CADA62 /* TVMazeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVMazeApp.swift; sourceTree = "<group>"; };
 		F7DC14632D2F0AA100CADA62 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -129,6 +137,12 @@
 		F7DC149C2D2F265B00CADA62 /* TVShowsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowsListViewModel.swift; sourceTree = "<group>"; };
 		F7DC149F2D2F2F8300CADA62 /* ViewDidLoadModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDidLoadModifier.swift; sourceTree = "<group>"; };
 		F7DC14A32D2F3DF700CADA62 /* RemoteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImage.swift; sourceTree = "<group>"; };
+		F7FD5B1F2D31337300ECC57D /* BiometricAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricAuthentication.swift; sourceTree = "<group>"; };
+		F7FD5B212D3133A100ECC57D /* BiometricAuthenticationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricAuthenticationError.swift; sourceTree = "<group>"; };
+		F7FD5B232D31361D00ECC57D /* BiometricAuthenticationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricAuthenticationUseCase.swift; sourceTree = "<group>"; };
+		F7FD5B262D313A0F00ECC57D /* BiometricAuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricAuthenticationViewModel.swift; sourceTree = "<group>"; };
+		F7FD5B292D313A5600ECC57D /* BiometricAuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricAuthenticationView.swift; sourceTree = "<group>"; };
+		F7FD5B2B2D313A8E00ECC57D /* BiometricAuthenticationViewModel+Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BiometricAuthenticationViewModel+Factory.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +192,7 @@
 			children = (
 				F71338992D30A33600331DDE /* Detail */,
 				F713388C2D308D8900331DDE /* List */,
+				F71338AC2D30B97000331DDE /* PersonSectionView.swift */,
 			);
 			path = People;
 			sourceTree = "<group>";
@@ -254,6 +269,7 @@
 		F7DC14782D2F108A00CADA62 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				F7FD5B1E2D31333200ECC57D /* Biometric */,
 				F7DC148F2D2F22B600CADA62 /* UseCase */,
 				F7DC148E2D2F22A700CADA62 /* Repository */,
 				F7DC14792D2F118B00CADA62 /* Model */,
@@ -331,6 +347,7 @@
 		F7DC14982D2F263100CADA62 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				F7FD5B282D313A3900ECC57D /* Biometric */,
 				F713388B2D308D7A00331DDE /* People */,
 				F71338762D306B0600331DDE /* Episode */,
 				F713385E2D30143D00331DDE /* TVShowDetail */,
@@ -358,6 +375,26 @@
 				F713387B2D30737C00331DDE /* String+RemoveHTML.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		F7FD5B1E2D31333200ECC57D /* Biometric */ = {
+			isa = PBXGroup;
+			children = (
+				F7FD5B1F2D31337300ECC57D /* BiometricAuthentication.swift */,
+				F7FD5B212D3133A100ECC57D /* BiometricAuthenticationError.swift */,
+				F7FD5B232D31361D00ECC57D /* BiometricAuthenticationUseCase.swift */,
+			);
+			path = Biometric;
+			sourceTree = "<group>";
+		};
+		F7FD5B282D313A3900ECC57D /* Biometric */ = {
+			isa = PBXGroup;
+			children = (
+				F7FD5B262D313A0F00ECC57D /* BiometricAuthenticationViewModel.swift */,
+				F7FD5B292D313A5600ECC57D /* BiometricAuthenticationView.swift */,
+				F7FD5B2B2D313A8E00ECC57D /* BiometricAuthenticationViewModel+Factory.swift */,
+			);
+			path = Biometric;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -430,6 +467,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7FD5B2C2D313A8E00ECC57D /* BiometricAuthenticationViewModel+Factory.swift in Sources */,
 				F71338642D30189300331DDE /* FetchTVShowSeasonsUseCase.swift in Sources */,
 				F7DC14932D2F239300CADA62 /* TVShowsRepositoryProtocol.swift in Sources */,
 				F7DC14812D2F219700CADA62 /* Network.swift in Sources */,
@@ -438,6 +476,7 @@
 				F71338882D308C1400331DDE /* PeopleEndpoint.swift in Sources */,
 				F7DC14642D2F0AA100CADA62 /* ContentView.swift in Sources */,
 				F71338922D308E4800331DDE /* PeopleListViewModel.swift in Sources */,
+				F7FD5B202D31337300ECC57D /* BiometricAuthentication.swift in Sources */,
 				F713387A2D30719300331DDE /* Pill.swift in Sources */,
 				F713386D2D301A2A00331DDE /* TVShowsEndpoint.swift in Sources */,
 				F7DC14732D2F0C5100CADA62 /* NetworkError.swift in Sources */,
@@ -464,6 +503,7 @@
 				F71338712D30218C00331DDE /* Episode.swift in Sources */,
 				F7DC148B2D2F223400CADA62 /* Links.swift in Sources */,
 				F7DC149B2D2F264F00CADA62 /* TVShowsListView.swift in Sources */,
+				F7FD5B272D313A0F00ECC57D /* BiometricAuthenticationViewModel.swift in Sources */,
 				F713388A2D308D1500331DDE /* FetchPeopleUseCase.swift in Sources */,
 				F7DC14832D2F21B300CADA62 /* Country.swift in Sources */,
 				F71338A72D30A65F00331DDE /* FetchGuestCastCreditsUseCase.swift in Sources */,
@@ -474,13 +514,17 @@
 				F7DC149D2D2F265B00CADA62 /* TVShowsListViewModel.swift in Sources */,
 				F71338842D308B7E00331DDE /* FetchPeopleRepositoryProtocol.swift in Sources */,
 				F71338A12D30A4F800331DDE /* Character.swift in Sources */,
+				F7FD5B242D31361D00ECC57D /* BiometricAuthenticationUseCase.swift in Sources */,
+				F7FD5B222D3133A100ECC57D /* BiometricAuthenticationError.swift in Sources */,
 				F71338902D308DCD00331DDE /* PeopleListView.swift in Sources */,
 				F71338982D3092AE00331DDE /* TVShowDetailView+Factory.swift in Sources */,
 				F71338962D3091BB00331DDE /* PeopleListView+Factory.swift in Sources */,
 				F71338662D30194F00331DDE /* TVShowSeason.swift in Sources */,
 				F71338602D30145A00331DDE /* TVShowDetailView.swift in Sources */,
 				F7DC147D2D2F216300CADA62 /* Schedule.swift in Sources */,
+				F7FD5B2A2D313A5600ECC57D /* BiometricAuthenticationView.swift in Sources */,
 				F71338942D308FBD00331DDE /* TVShowsListView+Factory.swift in Sources */,
+				F71338AD2D30B97000331DDE /* PersonSectionView.swift in Sources */,
 				F71338A92D30A76C00331DDE /* PeopleDetailViewModel.swift in Sources */,
 				F71338622D30147200331DDE /* TVShowDetailViewModel.swift in Sources */,
 				F7DC14912D2F22CD00CADA62 /* FetchTVShowsUseCase.swift in Sources */,
@@ -623,6 +667,9 @@
 				DEVELOPMENT_TEAM = JA3K44V4L9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TVMaze/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "We need to use Face ID to securely authenticate you to the app";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -652,6 +699,9 @@
 				DEVELOPMENT_TEAM = JA3K44V4L9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TVMaze/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "We need to use Face ID to securely authenticate you to the app";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

@@ -16,11 +16,18 @@ struct PeopleDetailView: View {
 
     var body: some View {
         VStack {
-            Text("")
+            PersonSectionView(person: viewModel.person) { person in
+
+            }
+            .padding(.top, 16)
+            
+            Spacer()
         }
+        .background(Color.background)
         .task {
             await viewModel.loadGuestCastCredit()
         }
+       
     }
 }
 

@@ -10,21 +10,21 @@ import Foundation
 @MainActor
 final class PeopleDetailViewModel: ObservableObject {
     @Published private(set) var guestCastCredits: [GuestCastCredit] = []
-    private let personId: Int
+    let person: Person
     
     private let fetchGuestCastCreditsUseCase: FetchGuestCastCreditsUseCaseProtocol
     
     init(
         fetchGuestCastCreditUseCase: FetchGuestCastCreditsUseCaseProtocol,
-        personId: Int
+        person: Person
     ) {
         self.fetchGuestCastCreditsUseCase = fetchGuestCastCreditUseCase
-        self.personId = personId
+        self.person = person
     }
     
     func loadGuestCastCredit() async {
         do {
-            guestCastCredits = try await fetchGuestCastCreditsUseCase.execute(id: personId)
+            guestCastCredits = try await fetchGuestCastCreditsUseCase.execute(id: person.id)
             print(guestCastCredits)
         } catch {
             

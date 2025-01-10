@@ -1,5 +1,5 @@
 //
-//  Character.swift
+//  CreditRef.swift
 //  TVMaze
 //
 //  Created by longarinas on 09/01/25.
