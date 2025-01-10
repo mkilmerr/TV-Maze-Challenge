@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ShowImage: Decodable {
+struct ImageBanner: Decodable {
     let medium: String?
     let original: String?
 }

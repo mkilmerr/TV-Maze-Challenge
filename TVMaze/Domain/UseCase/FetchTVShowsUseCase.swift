@@ -20,7 +20,7 @@ final class FetchTVShowsUseCase: FetchTVShowsUseCaseProtocol {
     }
 
     func execute(page: Int) async throws -> [TVShow] {
-        return try await repository.fetchShows(page: page)
+        try await repository.fetchShows(page: page)
     }
 }
 

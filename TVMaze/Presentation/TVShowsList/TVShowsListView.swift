@@ -26,7 +26,8 @@ struct TVShowsListView: View {
                 set: { if !$0 { navigationState = nil } }
             )) {
                 if case .detail(let show) = navigationState {
-                    TVShowDetailView(show: show)
+                    TVShowDetailView.make(with: show)
+//                    TVShowDetailView(show: show)
                 }
             }
             .onViewDidLoad {

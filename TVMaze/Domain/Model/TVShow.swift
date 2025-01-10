@@ -27,7 +27,7 @@ struct TVShow: Decodable {
     let webChannel: WebChannel?
     let dvdCountry: String?
     let externals: Externals
-    let image: ShowImage?
+    let image: ImageBanner?
     let summary: String?
     let updated: Int
     let links: Links
@@ -67,7 +67,7 @@ extension TVShow {
                 webChannel: nil,
                 dvdCountry: nil,
                 externals: Externals(tvrage: 18164, thetvdb: 81189, imdb: "tt0903747"),
-                image: ShowImage(medium: "https://example.com/medium1.jpg", original: "https://example.com/original1.jpg"),
+                image: ImageBanner(medium: "https://example.com/medium1.jpg", original: "https://example.com/original1.jpg"),
                 summary: "A high school chemistry teacher turned methamphetamine manufacturer partners with a former student to secure his family's financial future as he battles terminal lung cancer.",
                 updated: 1631234567,
                 links: Links(linksSelf: Link(href: "https://api.tvmaze.com/shows/1", name: nil), previousEpisode: Link(href: "https://api.tvmaze.com/episodes/1", name: nil))
@@ -92,7 +92,7 @@ extension TVShow {
                 webChannel: nil,
                 dvdCountry: nil,
                 externals: Externals(tvrage: 37780, thetvdb: 273181, imdb: "tt3032476"),
-                image: ShowImage(medium: "https://example.com/medium2.jpg", original: "https://example.com/original2.jpg"),
+                image: ImageBanner(medium: "https://example.com/medium2.jpg", original: "https://example.com/original2.jpg"),
                 summary: "The trials and tribulations of criminal lawyer Jimmy McGill in the time before he established his strip-mall law office in Albuquerque, New Mexico.",
                 updated: 1631234568,
                 links: Links(linksSelf: Link(href: "https://api.tvmaze.com/shows/2", name: nil), previousEpisode: Link(href: "https://api.tvmaze.com/episodes/2", name: nil))

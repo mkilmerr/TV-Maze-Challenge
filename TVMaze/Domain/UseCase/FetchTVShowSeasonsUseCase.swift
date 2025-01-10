@@ -19,6 +19,6 @@ final class FetchTVShowEpisodesUseCase: FetchTVShowEpisodesUseCaseProtocol {
     }
 
     func execute(id: Int) async throws -> [Episode] {
-        return try await repository.fetchEpisodes(by: id)
+        try await repository.fetchEpisodes(by: id)
     }
 }

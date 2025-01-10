@@ -11,7 +11,19 @@ import SwiftUI
 struct TVMazeApp: App {
     var body: some Scene {
         WindowGroup {
-            TVShowsListView(viewModel: .init(fetchTVShowsUseCase: FetchTVShowsUseCase(repository: TVShowsRepository(networkClient: .init()))))
+            TabView {
+                TVShowsListView.make()
+                    .tabItem {
+                        Label("Shows", systemImage: "tv")
+                    }
+                
+                PeopleListView.make()
+                    .tabItem {
+                        Label("People search", systemImage: "magnifyingglass")
+                    }
+            }
         }
     }
 }
+
+

@@ -10,12 +10,8 @@ import SwiftUI
 struct TVShowDetailView: View {
     @StateObject private var viewModel: TVShowDetailViewModel
     
-    init(show: TVShow) {
-        let useCase = FetchTVShowEpisodesUseCase(repository: TVShowEpisodesRepository(networkClient: .init()))
-        _viewModel = StateObject(wrappedValue: TVShowDetailViewModel(
-            fetchEpisodesUseCase: useCase,
-            show: show
-        ))
+    init(viewModel: TVShowDetailViewModel) {
+        _viewModel = StateObject(wrappedValue: viewModel)
     }
     
     var body: some View {
@@ -113,6 +109,7 @@ struct TVShowDetailView: View {
     }
 }
 
-#Preview {
-    TVShowDetailView(show: TVShow.mockShows().first!)
-}
+//#Preview {
+//    TVShowDetailView(viewModel: .)
+//    TVShowDetailView(show: TVShow.mockShows().first!)
+//}

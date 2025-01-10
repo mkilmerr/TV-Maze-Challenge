@@ -19,7 +19,7 @@ struct Episode: Decodable {
     let airstamp: String
     let runtime: Int
     let rating: Rating
-    let image: ShowImage?
+    let image: ImageBanner?
     let summary: String?
     let links: Links
     
@@ -27,13 +27,4 @@ struct Episode: Decodable {
         case id, url, name, season, number, type, airdate, airtime, airstamp, runtime, rating, image, summary
         case links = "_links"
     }
-}
-
-struct SelfLink: Decodable {
-    let href: String
-}
-
-struct Show: Decodable {
-    let href: String
-    let name: String
 }

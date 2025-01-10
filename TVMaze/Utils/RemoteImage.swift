@@ -11,6 +11,7 @@ extension RemoteImage {
     enum Size {
         case small
         case big
+        case circular
     }
 }
 
@@ -70,7 +71,12 @@ struct RemoteImage: View {
                     .cornerRadius(12)
                     .frame(height: 300)
 
-
+            case .circular:
+                remoteImage
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 100, height: 100)
+                    .clipShape(Circle())
             }
         }
     }
