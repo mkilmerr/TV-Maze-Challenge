@@ -22,7 +22,7 @@ struct Person: Decodable {
     let gender: String?
     let image: ImageBanner?
     let updated: Int
-    let links: Links
+    let links: LinksReference
     
     enum CodingKeys: String, CodingKey {
         case id, url, name, country, birthday, deathday, gender, image, updated

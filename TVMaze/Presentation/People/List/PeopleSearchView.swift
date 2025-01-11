@@ -29,7 +29,7 @@ struct PeopleSearchView: View {
                             await viewModel.search(by: query)
                         }
                     }
-                
+
                 ZStack {
                     peopleList(viewModel.people)
                     searchResult()
@@ -39,7 +39,8 @@ struct PeopleSearchView: View {
         }
         .sheet(isPresented: $openGuestCastCredits) {
             if let personSelected = viewModel.personSelected {
-                PeopleDetailView(person: personSelected)
+                SafariWebView(urlString: personSelected.url)
+                    .presentationDragIndicator(.visible)
             }
         }
     }
@@ -50,8 +51,10 @@ struct PeopleSearchView: View {
                 Text("Let's search for people!")
                   
             } else if viewModel.people.isEmpty && !searchText.isEmpty {
-                Text("No people found")
-                    .foregroundStyle(.red)
+                HStack {
+                    Text("No people found")
+                    Image(systemName: "person.2.slash")
+                }
             }
         }
         .bold()

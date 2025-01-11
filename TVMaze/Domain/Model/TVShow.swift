@@ -30,7 +30,7 @@ struct TVShow: Decodable {
     let image: ImageBanner?
     let summary: String?
     let updated: Int
-    let links: Links
+    let links: LinksReference
     
     enum CodingKeys: String, CodingKey {
         case id, url, name, type, language, genres, status
@@ -70,7 +70,7 @@ extension TVShow {
                 image: ImageBanner(medium: "https://example.com/medium1.jpg", original: "https://example.com/original1.jpg"),
                 summary: "A high school chemistry teacher turned methamphetamine manufacturer partners with a former student to secure his family's financial future as he battles terminal lung cancer.",
                 updated: 1631234567,
-                links: Links(linksSelf: Link(href: "https://api.tvmaze.com/shows/1", name: nil), previousEpisode: Link(href: "https://api.tvmaze.com/episodes/1", name: nil))
+                links: LinksReference(linksSelf: LinkReference(href: "https://api.tvmaze.com/shows/1", name: nil), previousEpisode: LinkReference(href: "https://api.tvmaze.com/episodes/1", name: nil))
             ),
             TVShow(
                 id: 2,
@@ -95,7 +95,7 @@ extension TVShow {
                 image: ImageBanner(medium: "https://example.com/medium2.jpg", original: "https://example.com/original2.jpg"),
                 summary: "The trials and tribulations of criminal lawyer Jimmy McGill in the time before he established his strip-mall law office in Albuquerque, New Mexico.",
                 updated: 1631234568,
-                links: Links(linksSelf: Link(href: "https://api.tvmaze.com/shows/2", name: nil), previousEpisode: Link(href: "https://api.tvmaze.com/episodes/2", name: nil))
+                links: LinksReference(linksSelf: LinkReference(href: "https://api.tvmaze.com/shows/2", name: nil), previousEpisode: LinkReference(href: "https://api.tvmaze.com/episodes/2", name: nil))
             )
         ]
     }

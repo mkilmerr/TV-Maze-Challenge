@@ -19,7 +19,7 @@ final class PeopleSearchViewModel: ObservableObject {
         self.fetchPeopleUseCase = fetchPeopleUseCase
     }
     
-    func loadPeople(by name: String) async {
+    private func loadPeople(by name: String) async {
         guard !isLoading else { return }
         
         isLoading = true

@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct Links: Decodable {
-    let linksSelf: Link
-    let previousEpisode: Link?
+struct LinksReference: Decodable {
+    let linksSelf: LinkReference
+    let previousEpisode: LinkReference?
     
     enum CodingKeys: String, CodingKey {
         case linksSelf = "self"

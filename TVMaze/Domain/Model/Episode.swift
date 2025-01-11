@@ -21,7 +21,7 @@ struct Episode: Decodable {
     let rating: Rating
     let image: ImageBanner?
     let summary: String?
-    let links: Links
+    let links: LinksReference
     
     enum CodingKeys: String, CodingKey {
         case id, url, name, season, number, type, airdate, airtime, airstamp, runtime, rating, image, summary

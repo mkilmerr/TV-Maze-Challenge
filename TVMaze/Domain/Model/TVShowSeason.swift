@@ -19,7 +19,7 @@ struct TVShowSeason: Decodable {
     let webChannel: WebChannel?
     let image: ImageBanner?
     let summary: String?
-    let links: Links
+    let links: LinksReference
 
     enum CodingKeys: String, CodingKey {
         case id, url, number, name, episodeOrder, premiereDate, endDate, network, webChannel, image, summary
