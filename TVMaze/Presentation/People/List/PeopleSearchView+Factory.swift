@@ -7,8 +7,8 @@
 
 import Foundation
 
-extension PeopleListView {
-    static func make() -> PeopleListView {
+extension PeopleSearchView {
+    static func make() -> PeopleSearchView {
         let fetchPeopleRepository = FetchPeopleRepository(
             networkClient: .init()
         )
@@ -17,7 +17,7 @@ extension PeopleListView {
             repository: fetchPeopleRepository
         )
         
-        let viewModel = PeopleListViewModel(
+        let viewModel = PeopleSearchViewModel(
             fetchPeopleUseCase: fetchPeopleUseCase
         )
         

@@ -8,14 +8,14 @@
 import Foundation
 
 struct PeopleEndpoint: Endpoint {
-    let page: Int
+    let name: String
 
-    init(page: Int) {
-        self.page = page
+    init(name: String) {
+        self.name = name
     }
 
     var path: String {
-        return "/people"
+        return "/search/people"
     }
     
     var method: HTTPMethod {
@@ -27,6 +27,6 @@ struct PeopleEndpoint: Endpoint {
     }
     
     var queryItems: [URLQueryItem]? {
-        return [URLQueryItem(name: "page", value: String(page))]
+        return [URLQueryItem(name: "q", value: String(name))]
     }
 }

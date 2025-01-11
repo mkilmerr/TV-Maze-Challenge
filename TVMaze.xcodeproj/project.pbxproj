@@ -27,20 +27,15 @@
 		F71338862D308BFB00331DDE /* FetchPeopleRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71338852D308BFB00331DDE /* FetchPeopleRepository.swift */; };
 		F71338882D308C1400331DDE /* PeopleEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71338872D308C1400331DDE /* PeopleEndpoint.swift */; };
 		F713388A2D308D1500331DDE /* FetchPeopleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71338892D308D1500331DDE /* FetchPeopleUseCase.swift */; };
-		F71338902D308DCD00331DDE /* PeopleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F713388F2D308DCD00331DDE /* PeopleListView.swift */; };
-		F71338922D308E4800331DDE /* PeopleListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71338912D308E4800331DDE /* PeopleListViewModel.swift */; };
+		F71338902D308DCD00331DDE /* PeopleSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F713388F2D308DCD00331DDE /* PeopleSearchView.swift */; };
+		F71338922D308E4800331DDE /* PeopleSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71338912D308E4800331DDE /* PeopleSearchViewModel.swift */; };
 		F71338942D308FBD00331DDE /* TVShowsListView+Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71338932D308FBD00331DDE /* TVShowsListView+Factory.swift */; };
-		F71338962D3091BB00331DDE /* PeopleListView+Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71338952D3091BB00331DDE /* PeopleListView+Factory.swift */; };
+		F71338962D3091BB00331DDE /* PeopleSearchView+Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71338952D3091BB00331DDE /* PeopleSearchView+Factory.swift */; };
 		F71338982D3092AE00331DDE /* TVShowDetailView+Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71338972D3092AE00331DDE /* TVShowDetailView+Factory.swift */; };
 		F713389B2D30A34800331DDE /* PersonDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F713389A2D30A34800331DDE /* PersonDetailView.swift */; };
 		F713389D2D30A3A000331DDE /* FetchGuestCastCreditsRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F713389C2D30A3A000331DDE /* FetchGuestCastCreditsRepositoryProtocol.swift */; };
 		F713389F2D30A4E500331DDE /* GuestCastCredit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F713389E2D30A4E500331DDE /* GuestCastCredit.swift */; };
 		F71338A12D30A4F800331DDE /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71338A02D30A4F800331DDE /* Character.swift */; };
-		F71338A32D30A5B800331DDE /* FetchGuestCastCreditRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71338A22D30A5B800331DDE /* FetchGuestCastCreditRepository.swift */; };
-		F71338A52D30A5E900331DDE /* GuestCastCreditEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71338A42D30A5E900331DDE /* GuestCastCreditEndpoint.swift */; };
-		F71338A72D30A65F00331DDE /* FetchGuestCastCreditsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71338A62D30A65F00331DDE /* FetchGuestCastCreditsUseCase.swift */; };
-		F71338A92D30A76C00331DDE /* PeopleDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71338A82D30A76C00331DDE /* PeopleDetailViewModel.swift */; };
-		F71338AB2D30A88300331DDE /* PeopleDetailView+Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71338AA2D30A88300331DDE /* PeopleDetailView+Factory.swift */; };
 		F71338AD2D30B97000331DDE /* PersonSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71338AC2D30B97000331DDE /* PersonSectionView.swift */; };
 		F7DC14622D2F0AA100CADA62 /* TVMazeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DC14612D2F0AA100CADA62 /* TVMazeApp.swift */; };
 		F7DC14642D2F0AA100CADA62 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DC14632D2F0AA100CADA62 /* ContentView.swift */; };
@@ -96,20 +91,15 @@
 		F71338852D308BFB00331DDE /* FetchPeopleRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchPeopleRepository.swift; sourceTree = "<group>"; };
 		F71338872D308C1400331DDE /* PeopleEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleEndpoint.swift; sourceTree = "<group>"; };
 		F71338892D308D1500331DDE /* FetchPeopleUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchPeopleUseCase.swift; sourceTree = "<group>"; };
-		F713388F2D308DCD00331DDE /* PeopleListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleListView.swift; sourceTree = "<group>"; };
-		F71338912D308E4800331DDE /* PeopleListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleListViewModel.swift; sourceTree = "<group>"; };
+		F713388F2D308DCD00331DDE /* PeopleSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleSearchView.swift; sourceTree = "<group>"; };
+		F71338912D308E4800331DDE /* PeopleSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleSearchViewModel.swift; sourceTree = "<group>"; };
 		F71338932D308FBD00331DDE /* TVShowsListView+Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TVShowsListView+Factory.swift"; sourceTree = "<group>"; };
-		F71338952D3091BB00331DDE /* PeopleListView+Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PeopleListView+Factory.swift"; sourceTree = "<group>"; };
+		F71338952D3091BB00331DDE /* PeopleSearchView+Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PeopleSearchView+Factory.swift"; sourceTree = "<group>"; };
 		F71338972D3092AE00331DDE /* TVShowDetailView+Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TVShowDetailView+Factory.swift"; sourceTree = "<group>"; };
 		F713389A2D30A34800331DDE /* PersonDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailView.swift; sourceTree = "<group>"; };
 		F713389C2D30A3A000331DDE /* FetchGuestCastCreditsRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchGuestCastCreditsRepositoryProtocol.swift; sourceTree = "<group>"; };
 		F713389E2D30A4E500331DDE /* GuestCastCredit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestCastCredit.swift; sourceTree = "<group>"; };
 		F71338A02D30A4F800331DDE /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
-		F71338A22D30A5B800331DDE /* FetchGuestCastCreditRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchGuestCastCreditRepository.swift; sourceTree = "<group>"; };
-		F71338A42D30A5E900331DDE /* GuestCastCreditEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestCastCreditEndpoint.swift; sourceTree = "<group>"; };
-		F71338A62D30A65F00331DDE /* FetchGuestCastCreditsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchGuestCastCreditsUseCase.swift; sourceTree = "<group>"; };
-		F71338A82D30A76C00331DDE /* PeopleDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleDetailViewModel.swift; sourceTree = "<group>"; };
-		F71338AA2D30A88300331DDE /* PeopleDetailView+Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PeopleDetailView+Factory.swift"; sourceTree = "<group>"; };
 		F71338AC2D30B97000331DDE /* PersonSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonSectionView.swift; sourceTree = "<group>"; };
 		F7DC145E2D2F0AA100CADA62 /* TVMaze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVMaze.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7DC14612D2F0AA100CADA62 /* TVMazeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVMazeApp.swift; sourceTree = "<group>"; };
@@ -173,7 +163,6 @@
 				F713386C2D301A2A00331DDE /* TVShowsEndpoint.swift */,
 				F713386E2D301A4B00331DDE /* TVShowEpisodesEndpoint.swift */,
 				F71338872D308C1400331DDE /* PeopleEndpoint.swift */,
-				F71338A42D30A5E900331DDE /* GuestCastCreditEndpoint.swift */,
 			);
 			path = Endpoint;
 			sourceTree = "<group>";
@@ -200,9 +189,9 @@
 		F713388C2D308D8900331DDE /* List */ = {
 			isa = PBXGroup;
 			children = (
-				F713388F2D308DCD00331DDE /* PeopleListView.swift */,
-				F71338912D308E4800331DDE /* PeopleListViewModel.swift */,
-				F71338952D3091BB00331DDE /* PeopleListView+Factory.swift */,
+				F713388F2D308DCD00331DDE /* PeopleSearchView.swift */,
+				F71338912D308E4800331DDE /* PeopleSearchViewModel.swift */,
+				F71338952D3091BB00331DDE /* PeopleSearchView+Factory.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -211,8 +200,6 @@
 			isa = PBXGroup;
 			children = (
 				F713389A2D30A34800331DDE /* PersonDetailView.swift */,
-				F71338A82D30A76C00331DDE /* PeopleDetailViewModel.swift */,
-				F71338AA2D30A88300331DDE /* PeopleDetailView+Factory.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -317,7 +304,6 @@
 				F7DC14902D2F22CD00CADA62 /* FetchTVShowsUseCase.swift */,
 				F71338632D30189300331DDE /* FetchTVShowSeasonsUseCase.swift */,
 				F71338892D308D1500331DDE /* FetchPeopleUseCase.swift */,
-				F71338A62D30A65F00331DDE /* FetchGuestCastCreditsUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -339,7 +325,6 @@
 				F7DC14962D2F257F00CADA62 /* TVShowsRepository.swift */,
 				F71338692D301A0900331DDE /* TVShowEpisodesRepository.swift */,
 				F71338852D308BFB00331DDE /* FetchPeopleRepository.swift */,
-				F71338A22D30A5B800331DDE /* FetchGuestCastCreditRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -475,13 +460,12 @@
 				F71338682D3019DB00331DDE /* TVShowEpisodesRepositoryProtocol.swift in Sources */,
 				F71338882D308C1400331DDE /* PeopleEndpoint.swift in Sources */,
 				F7DC14642D2F0AA100CADA62 /* ContentView.swift in Sources */,
-				F71338922D308E4800331DDE /* PeopleListViewModel.swift in Sources */,
+				F71338922D308E4800331DDE /* PeopleSearchViewModel.swift in Sources */,
 				F7FD5B202D31337300ECC57D /* BiometricAuthentication.swift in Sources */,
 				F713387A2D30719300331DDE /* Pill.swift in Sources */,
 				F713386D2D301A2A00331DDE /* TVShowsEndpoint.swift in Sources */,
 				F7DC14732D2F0C5100CADA62 /* NetworkError.swift in Sources */,
 				F71338862D308BFB00331DDE /* FetchPeopleRepository.swift in Sources */,
-				F71338A32D30A5B800331DDE /* FetchGuestCastCreditRepository.swift in Sources */,
 				F7DC148D2D2F224700CADA62 /* Link.swift in Sources */,
 				F7DC14772D2F0CD800CADA62 /* HTTPClient.swift in Sources */,
 				F713389D2D30A3A000331DDE /* FetchGuestCastCreditsRepositoryProtocol.swift in Sources */,
@@ -499,33 +483,29 @@
 				F71338802D308A7A00331DDE /* Gender.swift in Sources */,
 				F713389F2D30A4E500331DDE /* GuestCastCredit.swift in Sources */,
 				F7DC14A02D2F2F8300CADA62 /* ViewDidLoadModifier.swift in Sources */,
-				F71338A52D30A5E900331DDE /* GuestCastCreditEndpoint.swift in Sources */,
 				F71338712D30218C00331DDE /* Episode.swift in Sources */,
 				F7DC148B2D2F223400CADA62 /* Links.swift in Sources */,
 				F7DC149B2D2F264F00CADA62 /* TVShowsListView.swift in Sources */,
 				F7FD5B272D313A0F00ECC57D /* BiometricAuthenticationViewModel.swift in Sources */,
 				F713388A2D308D1500331DDE /* FetchPeopleUseCase.swift in Sources */,
 				F7DC14832D2F21B300CADA62 /* Country.swift in Sources */,
-				F71338A72D30A65F00331DDE /* FetchGuestCastCreditsUseCase.swift in Sources */,
 				F71338752D30582400331DDE /* EpisodeRowView.swift in Sources */,
 				F7DC147F2D2F218800CADA62 /* Rating.swift in Sources */,
-				F71338AB2D30A88300331DDE /* PeopleDetailView+Factory.swift in Sources */,
 				F713386F2D301A4B00331DDE /* TVShowEpisodesEndpoint.swift in Sources */,
 				F7DC149D2D2F265B00CADA62 /* TVShowsListViewModel.swift in Sources */,
 				F71338842D308B7E00331DDE /* FetchPeopleRepositoryProtocol.swift in Sources */,
 				F71338A12D30A4F800331DDE /* Character.swift in Sources */,
 				F7FD5B242D31361D00ECC57D /* BiometricAuthenticationUseCase.swift in Sources */,
 				F7FD5B222D3133A100ECC57D /* BiometricAuthenticationError.swift in Sources */,
-				F71338902D308DCD00331DDE /* PeopleListView.swift in Sources */,
+				F71338902D308DCD00331DDE /* PeopleSearchView.swift in Sources */,
 				F71338982D3092AE00331DDE /* TVShowDetailView+Factory.swift in Sources */,
-				F71338962D3091BB00331DDE /* PeopleListView+Factory.swift in Sources */,
+				F71338962D3091BB00331DDE /* PeopleSearchView+Factory.swift in Sources */,
 				F71338662D30194F00331DDE /* TVShowSeason.swift in Sources */,
 				F71338602D30145A00331DDE /* TVShowDetailView.swift in Sources */,
 				F7DC147D2D2F216300CADA62 /* Schedule.swift in Sources */,
 				F7FD5B2A2D313A5600ECC57D /* BiometricAuthenticationView.swift in Sources */,
 				F71338942D308FBD00331DDE /* TVShowsListView+Factory.swift in Sources */,
 				F71338AD2D30B97000331DDE /* PersonSectionView.swift in Sources */,
-				F71338A92D30A76C00331DDE /* PeopleDetailViewModel.swift in Sources */,
 				F71338622D30147200331DDE /* TVShowDetailViewModel.swift in Sources */,
 				F7DC14912D2F22CD00CADA62 /* FetchTVShowsUseCase.swift in Sources */,
 				F7DC14A42D2F3DF700CADA62 /* RemoteImage.swift in Sources */,

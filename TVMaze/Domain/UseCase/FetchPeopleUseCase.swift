@@ -8,7 +8,7 @@
 import Foundation
 
 protocol FetchPeopleUseCaseProtocol {
-    func execute(page: Int) async throws -> [Person]
+    func execute(name: String) async throws -> [PersonSearched]
 }
 
 final class FetchPeopleUseCase: FetchPeopleUseCaseProtocol {
@@ -18,7 +18,7 @@ final class FetchPeopleUseCase: FetchPeopleUseCaseProtocol {
         self.repository = repository
     }
 
-    func execute(page: Int) async throws -> [Person] {
-        try await repository.fetchPeople(page: page)
+    func execute(name: String) async throws -> [PersonSearched] {
+        try await repository.fetchPeople(name: name)
     }
 }

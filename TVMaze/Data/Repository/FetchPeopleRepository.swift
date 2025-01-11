@@ -14,9 +14,9 @@ final class FetchPeopleRepository: FetchPeopleRepositoryProtocol {
         self.networkClient = networkClient
     }
     
-    func fetchPeople(page: Int) async throws-> [Person] {
-        let endpoint = PeopleEndpoint(page: page)
-        let people: [Person] = try await networkClient.request(endpoint)
+    func fetchPeople(name: String) async throws-> [PersonSearched] {
+        let endpoint = PeopleEndpoint(name: name)
+        let people: [PersonSearched] = try await networkClient.request(endpoint)
         return people
     }
 }

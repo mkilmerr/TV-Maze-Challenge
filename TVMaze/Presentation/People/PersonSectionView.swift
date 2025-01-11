@@ -9,13 +9,16 @@ import SwiftUI
 
 struct PersonSectionView: View {
     let person: Person
+    let isTapEnabled: Bool
     let action: ((Person) -> ())?
 
     init(
         person: Person,
+        isTapEnabled: Bool = true,
         action: @escaping (Person) -> Void
     ) {
         self.person = person
+        self.isTapEnabled = isTapEnabled
         self.action = action
     }
 
@@ -46,6 +49,7 @@ struct PersonSectionView: View {
             }
             .padding()
         }
+        .allowsHitTesting(isTapEnabled)
     }
 }
 

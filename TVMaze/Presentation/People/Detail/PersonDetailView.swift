@@ -8,26 +8,25 @@
 import SwiftUI
 
 struct PeopleDetailView: View {
-    @StateObject private var viewModel: PeopleDetailViewModel
+    let person: Person
 
-    init(viewModel: PeopleDetailViewModel) {
-        _viewModel = StateObject(wrappedValue: viewModel)
+    init(person: Person) {
+        self.person = person
     }
 
     var body: some View {
         VStack {
-            PersonSectionView(person: viewModel.person) { person in
-
+            PersonSectionView(
+                person: person,
+                isTapEnabled: false
+            ) { person in
+              
             }
             .padding(.top, 16)
             
             Spacer()
         }
         .background(Color.background)
-        .task {
-            await viewModel.loadGuestCastCredit()
-        }
-       
     }
 }
 

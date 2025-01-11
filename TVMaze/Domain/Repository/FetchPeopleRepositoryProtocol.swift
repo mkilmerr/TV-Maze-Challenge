@@ -8,5 +8,5 @@
 import Foundation
 
 protocol FetchPeopleRepositoryProtocol {
-    func fetchPeople(page: Int) async throws-> [Person]
+    func fetchPeople(name: String) async throws-> [PersonSearched]
 }

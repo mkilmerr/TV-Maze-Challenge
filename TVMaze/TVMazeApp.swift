@@ -21,7 +21,7 @@ struct TVMazeApp: App {
                                 Label("Shows", systemImage: "tv")
                             }
                         
-                        PeopleListView.make()
+                        PeopleSearchView.make()
                             .tabItem {
                                 Label("People search", systemImage: "magnifyingglass")
                             }
