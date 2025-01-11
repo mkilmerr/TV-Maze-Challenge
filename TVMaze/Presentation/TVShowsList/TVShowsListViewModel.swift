@@ -43,6 +43,17 @@ final class TVShowsListViewModel: ObservableObject {
         }
     }
     
+    private func getMatchingFavoriteTVShows(_ local: [TVShowLocalData]) ->  [TVShow] {
+        let localTVShows = local.map { $0.toTVShow() }
+        if searchText.isEmpty {
+            return getUniqueTVShows(localTVShows)
+        } else {
+            return getUniqueTVShows(localTVShows).filter {
+                $0.name.localizedCaseInsensitiveContains(searchText)
+            }
+        }
+    }
+    
     private func getUniqueTVShows(_ shows: [TVShow]) -> [TVShow] {
         var uniqueTVShows = Set<Int>()
         return shows.filter { show in
@@ -75,8 +86,7 @@ final class TVShowsListViewModel: ObservableObject {
         case .defaultList:
             return tvShowsFromRemote
         case .favorite:
-            let localTVShows = local.map { $0.toTVShow() }
-            return getUniqueTVShows(localTVShows)
+            return getMatchingFavoriteTVShows(local).sorted { $0.name < $1.name }
         }
     }
 
