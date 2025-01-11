@@ -17,7 +17,8 @@ struct TVShowsListView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                showsList(viewModel.tvShows)
+                searchBar()
+                showsList(viewModel.tvShowsToPresent)
             }
             .navigationTitle("TV Shows")
             .onViewDidLoad {
@@ -26,14 +27,29 @@ struct TVShowsListView: View {
         }
     }
     
+    private func searchBar() -> some View {
+        TextField("Search TV Show...", text: $viewModel.searchText)
+            .bold()
+            .textFieldStyle(.automatic)
+            .autocorrectionDisabled()
+            .padding()
+            .onChange(of: viewModel.searchText) { _, name in
+                Task {
+                    if !name.isEmpty {
+                        await viewModel.loadTVShows(by: name)
+                    }
+                }
+            }
+    }
+    
     private func showsList(_ shows: [TVShow]) -> some View {
         ScrollView {
             LazyVStack(spacing: 8) {
-                ForEach(shows, id: \.id) { show in
+                ForEach(shows) { show in
                     showRow(for: show)
                         .contentShape(Rectangle())
                         .task(id: show.id) {
-                            if show.id == shows.last?.id {
+                            if show.id == shows.last?.id, viewModel.searchText.isEmpty {
                                 await viewModel.loadTVShows()
                             }
                         }
@@ -45,7 +61,7 @@ struct TVShowsListView: View {
                         .padding()
                 }
                 
-                if !viewModel.tvShows.isEmpty {
+                if viewModel.showFetchingMoreText {
                     Text("Fetching more...")
                         .task {
                             await viewModel.loadTVShows()
@@ -99,10 +115,11 @@ struct TVShowsListView: View {
     }
 }
 
-#Preview {
-    TVShowsListView(
-        viewModel: .init(
-            fetchTVShowsUseCase: FetchTVShowsUseCaseMock()
-        )
-    )
-}
+//#Preview {
+//    TVShowsListView(
+//        viewModel: .init(
+//            fetchTVShowsUseCase: FetchTVShowsUseCaseMock(),
+//            searchTVShowUseCase: SearchTVShowsUseCaseMock()
+//        )
+//    )
+//}

@@ -1,5 +1,5 @@
 //
-//  Links.swift
+//  LinksReference.swift
 //  TVMaze
 //
 //  Created by longarinas on 08/01/25.

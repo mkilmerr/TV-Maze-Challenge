@@ -7,7 +7,12 @@
 
 import Foundation
 
-struct TVShow: Decodable {
+struct TVShowSearched: Decodable {
+    let score: Double
+    let show: TVShow
+}
+
+struct TVShow: Decodable, Identifiable {
     let id: Int
     let url: String
     let name: String

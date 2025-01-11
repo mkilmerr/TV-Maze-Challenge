@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PeopleSearchView: View {
-    @State private var openGuestCastCredits: Bool = false
+    @State private var openPersonWebView: Bool = false
     @State private var searchText: String = ""
     @StateObject private var viewModel: PeopleSearchViewModel
 
@@ -37,7 +37,7 @@ struct PeopleSearchView: View {
             }
             .navigationTitle("People")
         }
-        .sheet(isPresented: $openGuestCastCredits) {
+        .sheet(isPresented: $openPersonWebView) {
             if let personSelected = viewModel.personSelected {
                 SafariWebView(urlString: personSelected.url)
                     .presentationDragIndicator(.visible)
@@ -68,7 +68,7 @@ struct PeopleSearchView: View {
                 ForEach(search, id: \.person.id) { search in
                     PersonSectionView(person: search.person) { person in
                         viewModel.personSelected = person
-                        openGuestCastCredits.toggle()
+                        openPersonWebView.toggle()
                     }
                 }
 
