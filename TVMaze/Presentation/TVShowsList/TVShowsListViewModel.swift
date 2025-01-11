@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @MainActor
 final class TVShowsListViewModel: ObservableObject {
@@ -16,15 +17,23 @@ final class TVShowsListViewModel: ObservableObject {
     @Published var searchText: String = ""
     private var currentPage = 0
     
+    var isFromFavorite: Bool = false
+    private let modelContext: ModelContext
     private let fetchTVShowsUseCase: FetchTVShowsUseCaseProtocol
     private let searchTVShowUseCase: SearchTVShowsUseCaseProtocol
+    let mode: TVShowsListView.Mode
+    lazy var localDataManager = LocalDataManager<TVShowLocalData>(context: modelContext)
     
     init(
         fetchTVShowsUseCase: FetchTVShowsUseCaseProtocol,
-        searchTVShowUseCase: SearchTVShowsUseCaseProtocol
+        searchTVShowUseCase: SearchTVShowsUseCaseProtocol,
+        modelContext: ModelContext,
+        mode: TVShowsListView.Mode
     ) {
         self.fetchTVShowsUseCase = fetchTVShowsUseCase
         self.searchTVShowUseCase = searchTVShowUseCase
+        self.mode = mode
+        self.modelContext = modelContext
     }
 
     private var matchingTVShows: [TVShow] {
@@ -44,7 +53,36 @@ final class TVShowsListViewModel: ObservableObject {
         }
     }
     
+    var title: String {
+        switch mode {
+        case .defaultList:
+            "TV Shows"
+        case .favorite:
+            "Favorite TV Shows"
+        }
+    }
+    
+    var searchPlaceholder: String {
+        switch mode {
+        case .defaultList:
+            "Search TV Show..."
+        case .favorite:
+            "Search my favorites"
+        }
+    }
+    
     var tvShowsToPresent: [TVShow] {
+        switch mode {
+        case .defaultList:
+            return tvShowsFromRemote
+        case .favorite:
+            let localTVShows = localDataManager.fetchAll().map { $0.toTVShow() }
+            return getUniqueTVShows(localTVShows)
+        }
+      
+    }
+
+    private var tvShowsFromRemote: [TVShow] {
         if searchText.isEmpty {
             return matchingTVShows
         } else {

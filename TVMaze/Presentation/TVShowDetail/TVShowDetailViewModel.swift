@@ -6,24 +6,35 @@
 //
 
 import Foundation
+import SwiftData
+
+struct EpisodeItemViewModel: Identifiable {
+    let id = UUID()
+    let seasonNumber: Int
+    let episodes: [Episode]
+}
 
 @MainActor
 final class TVShowDetailViewModel: ObservableObject {
-    let show: TVShow
+    let show: TVShowRepresentable
     @Published private(set) var episodes: [EpisodeItemViewModel] = []
     @Published private(set) var isLoading = false
     @Published private(set) var error: Error?
     
+    private let modelContext: ModelContext
     let fetchEpisodesUseCase: FetchTVShowEpisodesUseCaseProtocol
+    lazy var localDataManager = LocalDataManager<TVShowLocalData>(context: modelContext)
     
     init(
         fetchEpisodesUseCase: FetchTVShowEpisodesUseCaseProtocol,
-        show: TVShow
+        show: TVShow,
+        modelContext: ModelContext
     ) {
         self.fetchEpisodesUseCase = fetchEpisodesUseCase
         self.show = show
+        self.modelContext = modelContext
     }
-    
+
     func loadSeasons() async {
         isLoading = true
         do {
@@ -47,10 +58,11 @@ final class TVShowDetailViewModel: ObservableObject {
         }
         .sorted(by: { $0.seasonNumber < $1.seasonNumber })
     }
-}
-
-struct EpisodeItemViewModel: Identifiable {
-    let id = UUID()
-    let seasonNumber: Int
-    let episodes: [Episode]
+    
+    func favoriteTVShow() async {
+        if let show = show as? TVShow {
+            let localData = show.toLocalData()
+            localDataManager.save(localData)
+        }
+    }
 }

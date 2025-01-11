@@ -24,22 +24,35 @@ struct TVShowDetailView: View {
         }
         .navigationBarTitleDisplayMode(.inline)
         .task {
+            await viewModel.favoriteTVShow()
             await viewModel.loadSeasons()
         }
     }
     
     private var showInfoSection: some View {
         VStack(alignment: .leading, spacing: 16) {
-            if let imageUrl = viewModel.show.image?.original {
+            if let imageUrl = viewModel.show.remoteImage {
                 RemoteImage(url: URL(string: imageUrl), size: .big)
                     .aspectRatio(contentMode: .fit)
             }
             
             VStack(alignment: .leading, spacing: 8) {
-                Text(viewModel.show.name)
-                    .font(.title)
-                    .bold()
-                
+                HStack {
+                    Text(viewModel.show.name)
+                        .font(.title)
+                        .bold()
+                Spacer()
+                    Button {
+                    } label: {
+                        Image(systemName: "heart.fill")
+                            .resizable()
+                            .frame(width: 20, height: 20)
+                            .tint(.red)
+                    }
+                }
+                .padding(.bottom, 16)
+                .padding(.trailing, 8)
+        
                 if let summary = viewModel.show.summary {
                     Text(summary.removeHTML())
                         .font(.body)
@@ -62,7 +75,7 @@ struct TVShowDetailView: View {
 
                         Spacer()
 
-                        if let rating = viewModel.show.rating.average {
+                        if let rating = viewModel.show.average {
                             Text("Rating: ★ \(String(format: "%.1f", rating))")
                                 .bold()
                                 .foregroundColor(.yellow)
@@ -78,7 +91,7 @@ struct TVShowDetailView: View {
                     }
                     
                     Pill(
-                        text: "Schedule: \(viewModel.show.schedule.days.joined(separator: ", ")) at \(viewModel.show.schedule.time)",
+                        text: "Schedule: \(viewModel.show.scheduleDays?.joined(separator: ", ")) at \(viewModel.show.time)",
                         color: .orange
                     )
                 }

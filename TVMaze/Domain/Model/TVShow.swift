@@ -12,7 +12,7 @@ struct TVShowSearched: Decodable {
     let show: TVShow
 }
 
-struct TVShow: Decodable, Identifiable {
+struct TVShow: Decodable, Identifiable, TVShowRepresentable {
     let id: Int
     let url: String
     let name: String
@@ -36,7 +36,27 @@ struct TVShow: Decodable, Identifiable {
     let summary: String?
     let updated: Int
     let links: LinksReference
-    
+
+    var remoteImage: String? {
+        image?.original
+    }
+
+    var average: Double? {
+        rating.average
+    }
+
+    var scheduleDays: [String]? {
+        schedule.days
+    }
+
+    var time: String {
+        schedule.time
+    }
+
+    func toLocalData() -> TVShowLocalData {
+        return TVShowLocalData(from: self)
+    }
+
     enum CodingKeys: String, CodingKey {
         case id, url, name, type, language, genres, status
         case runtime, averageRuntime, premiered, ended

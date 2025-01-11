@@ -7,8 +7,16 @@
 
 import SwiftUI
 
+extension TVShowsListView {
+    enum Mode {
+        case defaultList
+        case favorite
+    }
+}
+
 struct TVShowsListView: View {
     @StateObject private var viewModel: TVShowsListViewModel
+    @Environment(\.modelContext) private var context
 
     init(viewModel: TVShowsListViewModel) {
         _viewModel = StateObject(wrappedValue: viewModel)
@@ -20,7 +28,7 @@ struct TVShowsListView: View {
                 searchBar()
                 showsList(viewModel.tvShowsToPresent)
             }
-            .navigationTitle("TV Shows")
+            .navigationTitle(viewModel.title)
             .onViewDidLoad {
                 await viewModel.loadTVShows()
             }
@@ -28,14 +36,14 @@ struct TVShowsListView: View {
     }
     
     private func searchBar() -> some View {
-        TextField("Search TV Show...", text: $viewModel.searchText)
+        TextField(viewModel.searchPlaceholder, text: $viewModel.searchText)
             .bold()
             .textFieldStyle(.automatic)
             .autocorrectionDisabled()
             .padding()
             .onChange(of: viewModel.searchText) { _, name in
-                Task {
-                    if !name.isEmpty {
+                if !name.isEmpty && viewModel.mode == .defaultList {
+                    Task {
                         await viewModel.loadTVShows(by: name)
                     }
                 }
@@ -61,7 +69,7 @@ struct TVShowsListView: View {
                         .padding()
                 }
                 
-                if viewModel.showFetchingMoreText {
+                if viewModel.showFetchingMoreText && viewModel.mode == .defaultList {
                     Text("Fetching more...")
                         .task {
                             await viewModel.loadTVShows()
@@ -74,7 +82,7 @@ struct TVShowsListView: View {
 
     private func showRow(for show: TVShow) -> some View {
         NavigationLink {
-            TVShowDetailView.make(with: show)
+            TVShowDetailView.make(with: show, modelContext: context)
         } label: {
             VStack(alignment: .leading, spacing: 8) {
                 Text(show.name)

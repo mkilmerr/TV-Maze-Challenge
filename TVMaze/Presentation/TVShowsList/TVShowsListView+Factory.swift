@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import SwiftData
 
 extension TVShowsListView {
-    static func make() -> TVShowsListView {
+    static func make(modelContext: ModelContext, mode: Self.Mode) -> TVShowsListView {
         let fetchTVShowsNetworkClient = NetworkClient()
         let searchTVShowsNetworkClient = NetworkClient()
     
@@ -30,7 +31,9 @@ extension TVShowsListView {
         
         let viewModel = TVShowsListViewModel(
             fetchTVShowsUseCase: fetchTVShowsUseCase,
-            searchTVShowUseCase: searchTVShowsUseCase
+            searchTVShowUseCase: searchTVShowsUseCase,
+            modelContext: modelContext, 
+            mode: mode
         )
         
         return .init(viewModel: viewModel)

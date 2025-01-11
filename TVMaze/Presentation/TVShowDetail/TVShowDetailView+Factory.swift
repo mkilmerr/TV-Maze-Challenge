@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import SwiftData
 
 extension TVShowDetailView {
-    static func make(with show: TVShow) -> TVShowDetailView {
+    static func make(with show: TVShow, modelContext: ModelContext) -> TVShowDetailView {
         let fetchShowEpisodesRepository = TVShowEpisodesRepository(
             networkClient: .init()
         )
@@ -19,7 +20,8 @@ extension TVShowDetailView {
 
         let viewModel = TVShowDetailViewModel(
             fetchEpisodesUseCase: fetchTVShowEpisodesUseCase,
-            show: show
+            show: show,
+            modelContext: modelContext
         )
 
         return .init(viewModel: viewModel)
