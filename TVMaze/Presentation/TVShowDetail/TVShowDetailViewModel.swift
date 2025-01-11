@@ -20,19 +20,15 @@ final class TVShowDetailViewModel: ObservableObject {
     @Published private(set) var episodes: [EpisodeItemViewModel] = []
     @Published private(set) var isLoading = false
     @Published private(set) var error: Error?
-    
-    private let modelContext: ModelContext
+
     let fetchEpisodesUseCase: FetchTVShowEpisodesUseCaseProtocol
-    lazy var localDataManager = LocalDataManager<TVShowLocalData>(context: modelContext)
     
     init(
         fetchEpisodesUseCase: FetchTVShowEpisodesUseCaseProtocol,
-        show: TVShow,
-        modelContext: ModelContext
+        show: TVShow
     ) {
         self.fetchEpisodesUseCase = fetchEpisodesUseCase
         self.show = show
-        self.modelContext = modelContext
     }
 
     func loadSeasons() async {
@@ -57,12 +53,5 @@ final class TVShowDetailViewModel: ObservableObject {
             )
         }
         .sorted(by: { $0.seasonNumber < $1.seasonNumber })
-    }
-    
-    func favoriteTVShow() async {
-        if let show = show as? TVShow {
-            let localData = show.toLocalData()
-            localDataManager.save(localData)
-        }
     }
 }

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 extension TVShowsListView {
     enum Mode {
@@ -16,6 +17,7 @@ extension TVShowsListView {
 
 struct TVShowsListView: View {
     @StateObject private var viewModel: TVShowsListViewModel
+    let descriptor = FetchDescriptor<TVShowLocalData>()
     @Environment(\.modelContext) private var context
 
     init(viewModel: TVShowsListViewModel) {
@@ -26,11 +28,18 @@ struct TVShowsListView: View {
         NavigationStack {
             VStack {
                 searchBar()
-                showsList(viewModel.tvShowsToPresent)
+                showsList(viewModel.getTVShowsToPresent(getFavoriteTVShows()))
             }
             .navigationTitle(viewModel.title)
             .onViewDidLoad {
-                await viewModel.loadTVShows()
+                if viewModel.mode == .defaultList {
+                    await viewModel.loadTVShows()
+                }
+            }
+            .onAppear {
+                if viewModel.mode == .favorite {
+                    viewModel.objectWillChange.send()
+                }
             }
         }
     }
@@ -82,7 +91,7 @@ struct TVShowsListView: View {
 
     private func showRow(for show: TVShow) -> some View {
         NavigationLink {
-            TVShowDetailView.make(with: show, modelContext: context)
+            TVShowDetailView.make(with: show)
         } label: {
             VStack(alignment: .leading, spacing: 8) {
                 Text(show.name)
@@ -119,6 +128,15 @@ struct TVShowsListView: View {
                 }
             }
             .padding(.vertical, 4)
+        }
+    }
+    
+    // MARK: Local Storage
+    private func getFavoriteTVShows() -> [TVShowLocalData] {
+        do {
+            return try context.fetch(descriptor)
+        } catch {
+            return []
         }
     }
 }

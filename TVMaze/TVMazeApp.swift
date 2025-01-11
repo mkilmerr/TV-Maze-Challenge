@@ -47,6 +47,7 @@ struct TVMazeApp: App {
                                 Label("Favorites", systemImage: "heart.fill")
                             }
                     }
+                    .modelContainer(container)
                 } else {
                     BiometricAuthenticationView(
                         viewModel: biometricAuthenticationViewModel
@@ -54,6 +55,5 @@ struct TVMazeApp: App {
                 }
             }
         }
-        .modelContainer(container)
     }
 }

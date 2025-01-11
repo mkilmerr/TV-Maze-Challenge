@@ -22,7 +22,6 @@ final class TVShowsListViewModel: ObservableObject {
     private let fetchTVShowsUseCase: FetchTVShowsUseCaseProtocol
     private let searchTVShowUseCase: SearchTVShowsUseCaseProtocol
     let mode: TVShowsListView.Mode
-    lazy var localDataManager = LocalDataManager<TVShowLocalData>(context: modelContext)
     
     init(
         fetchTVShowsUseCase: FetchTVShowsUseCaseProtocol,
@@ -71,15 +70,14 @@ final class TVShowsListViewModel: ObservableObject {
         }
     }
     
-    var tvShowsToPresent: [TVShow] {
+    func getTVShowsToPresent(_ local: [TVShowLocalData]) -> [TVShow] {
         switch mode {
         case .defaultList:
             return tvShowsFromRemote
         case .favorite:
-            let localTVShows = localDataManager.fetchAll().map { $0.toTVShow() }
+            let localTVShows = local.map { $0.toTVShow() }
             return getUniqueTVShows(localTVShows)
         }
-      
     }
 
     private var tvShowsFromRemote: [TVShow] {

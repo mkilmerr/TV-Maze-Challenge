@@ -6,9 +6,13 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct TVShowDetailView: View {
     @StateObject private var viewModel: TVShowDetailViewModel
+    @State private var isFavorite: Bool = false
+    let descriptor = FetchDescriptor<TVShowLocalData>()
+    @Environment(\.modelContext) private var context
     
     init(viewModel: TVShowDetailViewModel) {
         _viewModel = StateObject(wrappedValue: viewModel)
@@ -23,8 +27,10 @@ struct TVShowDetailView: View {
             .padding(.top, 8)
         }
         .navigationBarTitleDisplayMode(.inline)
+        .onAppear {
+            checkFavorite()
+        }
         .task {
-            await viewModel.favoriteTVShow()
             await viewModel.loadSeasons()
         }
     }
@@ -41,10 +47,11 @@ struct TVShowDetailView: View {
                     Text(viewModel.show.name)
                         .font(.title)
                         .bold()
-                Spacer()
+                    Spacer()
                     Button {
+                        saveTVShow()
                     } label: {
-                        Image(systemName: "heart.fill")
+                        Image(systemName: isFavorite ? "heart.fill" : "heart")
                             .resizable()
                             .frame(width: 20, height: 20)
                             .tint(.red)
@@ -52,7 +59,7 @@ struct TVShowDetailView: View {
                 }
                 .padding(.bottom, 16)
                 .padding(.trailing, 8)
-        
+                
                 if let summary = viewModel.show.summary {
                     Text(summary.removeHTML())
                         .font(.body)
@@ -72,17 +79,17 @@ struct TVShowDetailView: View {
                             text: "Status: \(viewModel.show.status)",
                             color: .blue
                         )
-
+                        
                         Spacer()
-
+                        
                         if let rating = viewModel.show.average {
                             Text("Rating: ★ \(String(format: "%.1f", rating))")
                                 .bold()
                                 .foregroundColor(.yellow)
                         }
                     }
-                   
-
+                    
+                    
                     if !viewModel.show.genres.isEmpty {
                         Pill(
                             text: "Genres: \(viewModel.show.genres.joined(separator: ", "))",
@@ -91,7 +98,7 @@ struct TVShowDetailView: View {
                     }
                     
                     Pill(
-                        text: "Schedule: \(viewModel.show.scheduleDays?.joined(separator: ", ")) at \(viewModel.show.time)",
+                        text: "Schedule: \(String(describing: viewModel.show.scheduleDays?.joined(separator: ", "))) at \(viewModel.show.time)",
                         color: .orange
                     )
                 }
@@ -100,7 +107,7 @@ struct TVShowDetailView: View {
         }
         .padding(.top, 16)
     }
-
+    
     private var seasonsList: some View {
         VStack(alignment: .leading, spacing: 16) {
             Text("Seasons")
@@ -119,6 +126,51 @@ struct TVShowDetailView: View {
             }
         }
         .padding(.top)
+    }
+    
+    // MARK: Local Storage
+    private func saveTVShow() {
+        do {
+            let data = try context.fetch(descriptor)
+            if data.filter({ $0.id == viewModel.show.id }).isEmpty {
+                if let show = viewModel.show as? TVShow {
+                    context.insert(show.toLocalData())
+                    try context.save()
+                    isFavorite = true
+                }
+            } else {
+                removeTVShowFromFavorite()
+            }
+        } catch {
+            isFavorite = false
+        }
+    }
+    
+    private func removeTVShowFromFavorite() {
+        if let show = viewModel.show as? TVShow {
+            do {
+                let data = try context.fetch(descriptor)
+                if let localShow = data.first(where: { $0.id == show.id }) {
+                    context.delete(localShow)
+                    try context.save()
+                    isFavorite = false
+                }
+            } catch {
+                isFavorite = true
+            }
+        }
+    }
+    
+    func checkFavorite() {
+        do {
+            let result = try !context.fetch(descriptor).filter {
+                $0.id == viewModel.show.id
+            }.isEmpty
+
+            isFavorite =  result
+        } catch {
+            isFavorite = false
+        }
     }
 }
 
