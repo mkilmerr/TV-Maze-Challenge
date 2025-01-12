@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct Rating: Decodable {
+struct Rating: Decodable, Equatable {
     let average: Double?
 }

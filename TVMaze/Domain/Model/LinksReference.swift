@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct LinksReference: Decodable {
+struct LinksReference: Decodable, Equatable {
     let linksSelf: LinkReference
     let previousEpisode: LinkReference?
     

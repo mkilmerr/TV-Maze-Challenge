@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct PersonSearched: Decodable {
+struct PersonSearched: Decodable, Equatable {
     let score: Double
     let person: Person
 }
 
-struct Person: Decodable {
+struct Person: Decodable, Equatable {
     let id: Int
     let url: String
     let name: String

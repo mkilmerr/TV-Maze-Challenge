@@ -8,9 +8,9 @@
 import Foundation
 
 final class FetchPeopleRepository: FetchPeopleRepositoryProtocol {
-    private let networkClient: NetworkClient
+    private let networkClient: HTTPClient
 
-    init(networkClient: NetworkClient) {
+    init(networkClient: HTTPClient) {
         self.networkClient = networkClient
     }
     

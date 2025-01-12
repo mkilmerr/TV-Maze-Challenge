@@ -8,9 +8,9 @@
 import Foundation
 
 final class SearchTVShowsRepository: SearchTVShowsRepositoryProtocol {
-    let networkClient: NetworkClient
+    let networkClient: HTTPClient
 
-    init(networkClient: NetworkClient) {
+    init(networkClient: HTTPClient) {
         self.networkClient = networkClient
     }
 

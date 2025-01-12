@@ -11,7 +11,7 @@ import SwiftData
 extension TVShowDetailView {
     static func make(with show: TVShow) -> TVShowDetailView {
         let fetchShowEpisodesRepository = TVShowEpisodesRepository(
-            networkClient: .init()
+            networkClient: NetworkClient()
         )
 
         let fetchTVShowEpisodesUseCase = FetchTVShowEpisodesUseCase(

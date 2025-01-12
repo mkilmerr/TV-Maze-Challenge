@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ImageBanner: Decodable {
+struct ImageBanner: Decodable, Equatable {
     let medium: String?
     let original: String?
 }

@@ -10,7 +10,7 @@ import Foundation
 extension PeopleSearchView {
     static func make() -> PeopleSearchView {
         let fetchPeopleRepository = FetchPeopleRepository(
-            networkClient: .init()
+            networkClient: NetworkClient()
         )
         
         let fetchPeopleUseCase = FetchPeopleUseCase(

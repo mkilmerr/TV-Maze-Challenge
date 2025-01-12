@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Externals: Decodable {
+struct Externals: Decodable, Equatable {
     let tvrage: Int?
     let thetvdb: Int?
     let imdb: String?

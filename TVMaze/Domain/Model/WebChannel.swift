@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct WebChannel: Decodable {
+struct WebChannel: Decodable, Equatable {
     let id: Int
     let name: String
     let country: Country?

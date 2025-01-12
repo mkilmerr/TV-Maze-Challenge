@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct LinkReference: Decodable {
+struct LinkReference: Decodable, Equatable {
     let href: String
     let name: String?
 }
