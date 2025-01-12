@@ -21,11 +21,7 @@ struct TVShowsEndpoint: Endpoint {
     var method: HTTPMethod {
         return .get
     }
-    
-    var headers: [String : String]? {
-        return ["Content-Type": "application/json"]
-    }
-    
+
     var queryItems: [URLQueryItem]? {
         return [URLQueryItem(name: "page", value: String(page))]
     }
