@@ -36,6 +36,9 @@ struct TVShowsListView: View {
                     await viewModel.loadTVShows()
                 }
             }
+            .alert("Something went wrong...", isPresented: $viewModel.isError) {
+                Button("OK", role: .cancel) { }
+            }
             .onAppear {
                 if viewModel.mode == .favorite {
                     viewModel.objectWillChange.send()

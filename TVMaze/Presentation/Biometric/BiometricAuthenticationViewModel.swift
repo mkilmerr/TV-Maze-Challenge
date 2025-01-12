@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-@MainActor
 final class BiometricAuthenticationViewModel: ObservableObject {
     @Published private(set) var isAuthenticated = false
     @Published private(set) var error: String?
@@ -22,6 +21,7 @@ final class BiometricAuthenticationViewModel: ObservableObject {
         authenticationUseCase.isBiometricAvailable()
     }
     
+    @MainActor
     func authenticate() async {
         do {
             try await authenticationUseCase.authenticate()

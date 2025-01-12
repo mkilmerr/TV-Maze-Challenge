@@ -37,6 +37,9 @@ struct PeopleSearchView: View {
             }
             .navigationTitle("People")
         }
+        .alert("Something went wrong...", isPresented: $viewModel.isError) {
+            Button("OK", role: .cancel) { }
+        }
         .sheet(isPresented: $openPersonWebView) {
             if let personSelected = viewModel.personSelected {
                 SafariWebView(urlString: personSelected.url)

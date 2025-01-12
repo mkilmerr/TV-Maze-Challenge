@@ -8,12 +8,11 @@
 import Foundation
 import SwiftData
 
-@MainActor
 final class TVShowDetailViewModel: ObservableObject {
     let show: TVShowRepresentable
     @Published private(set) var episodes: [EpisodeItemViewModel] = []
     @Published private(set) var isLoading = false
-    @Published private(set) var error: Error?
+    @Published var isError: Bool = false
 
     let fetchEpisodesUseCase: FetchTVShowEpisodesUseCaseProtocol
     
@@ -24,15 +23,16 @@ final class TVShowDetailViewModel: ObservableObject {
         self.fetchEpisodesUseCase = fetchEpisodesUseCase
         self.show = show
     }
-
-    func loadSeasons() async {
+    
+    @MainActor
+    func loadEpisodes() async {
         isLoading = true
         do {
             let episodesResponse = try await fetchEpisodesUseCase.execute(id: show.id)
             episodes = getGroupedEpisodesBySeason(episodes: episodesResponse)
             isLoading = false
         } catch {
-            self.error = error
+            isError.toggle()
             isLoading = false
         }
     }

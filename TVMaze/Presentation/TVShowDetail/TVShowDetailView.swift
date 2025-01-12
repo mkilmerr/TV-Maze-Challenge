@@ -30,8 +30,11 @@ struct TVShowDetailView: View {
         .onAppear {
             checkFavorite()
         }
+        .alert("Something went wrong...", isPresented: $viewModel.isError) {
+            Button("OK", role: .cancel) { }
+        }
         .task {
-            await viewModel.loadSeasons()
+            await viewModel.loadEpisodes()
         }
     }
     

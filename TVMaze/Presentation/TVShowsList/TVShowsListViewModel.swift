@@ -13,7 +13,7 @@ final class TVShowsListViewModel: ObservableObject {
     @Published private(set) var tvShows: [TVShow] = []
     @Published private(set) var tvShowsFromSearch: [TVShowSearched] = []
     @Published private(set) var isLoading: Bool = false
-    @Published private(set) var isError: Bool = false
+    @Published var isError: Bool = false
     @Published var searchText: String = ""
     private var currentPage = 0
     

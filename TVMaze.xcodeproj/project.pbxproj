@@ -53,6 +53,12 @@
 		F7912BEE2D33461A007EF169 /* SearchTVShowsRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7912BED2D33461A007EF169 /* SearchTVShowsRepositoryTests.swift */; };
 		F7912BF02D33466D007EF169 /* SearchTVShowsUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7912BEF2D33466D007EF169 /* SearchTVShowsUseCaseTests.swift */; };
 		F7912BF22D334682007EF169 /* SearchTVShowsRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7912BF12D334682007EF169 /* SearchTVShowsRepositoryMock.swift */; };
+		F7912BF62D334756007EF169 /* BiometricAuthenticationViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7912BF52D334756007EF169 /* BiometricAuthenticationViewModelTests.swift */; };
+		F7912BF82D3347EF007EF169 /* BiometricAuthenticationUseCaseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7912BF72D3347EF007EF169 /* BiometricAuthenticationUseCaseMock.swift */; };
+		F7912BFA2D334953007EF169 /* PeopleSearchViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7912BF92D334953007EF169 /* PeopleSearchViewModelTests.swift */; };
+		F7912BFC2D334A22007EF169 /* FetchPeopleUseCaseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7912BFB2D334A22007EF169 /* FetchPeopleUseCaseMock.swift */; };
+		F7912BFE2D334AB6007EF169 /* TVShowDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7912BFD2D334AB6007EF169 /* TVShowDetailViewModelTests.swift */; };
+		F7912C002D334D00007EF169 /* FetchTVShowEpisodesUseCaseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7912BFF2D334D00007EF169 /* FetchTVShowEpisodesUseCaseMock.swift */; };
 		F7DC14622D2F0AA100CADA62 /* TVMazeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DC14612D2F0AA100CADA62 /* TVMazeApp.swift */; };
 		F7DC14642D2F0AA100CADA62 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DC14632D2F0AA100CADA62 /* ContentView.swift */; };
 		F7DC14662D2F0AA200CADA62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7DC14652D2F0AA200CADA62 /* Assets.xcassets */; };
@@ -144,6 +150,12 @@
 		F7912BED2D33461A007EF169 /* SearchTVShowsRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTVShowsRepositoryTests.swift; sourceTree = "<group>"; };
 		F7912BEF2D33466D007EF169 /* SearchTVShowsUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTVShowsUseCaseTests.swift; sourceTree = "<group>"; };
 		F7912BF12D334682007EF169 /* SearchTVShowsRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTVShowsRepositoryMock.swift; sourceTree = "<group>"; };
+		F7912BF52D334756007EF169 /* BiometricAuthenticationViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricAuthenticationViewModelTests.swift; sourceTree = "<group>"; };
+		F7912BF72D3347EF007EF169 /* BiometricAuthenticationUseCaseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricAuthenticationUseCaseMock.swift; sourceTree = "<group>"; };
+		F7912BF92D334953007EF169 /* PeopleSearchViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleSearchViewModelTests.swift; sourceTree = "<group>"; };
+		F7912BFB2D334A22007EF169 /* FetchPeopleUseCaseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchPeopleUseCaseMock.swift; sourceTree = "<group>"; };
+		F7912BFD2D334AB6007EF169 /* TVShowDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowDetailViewModelTests.swift; sourceTree = "<group>"; };
+		F7912BFF2D334D00007EF169 /* FetchTVShowEpisodesUseCaseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchTVShowEpisodesUseCaseMock.swift; sourceTree = "<group>"; };
 		F7DC145E2D2F0AA100CADA62 /* TVMaze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVMaze.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7DC14612D2F0AA100CADA62 /* TVMazeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVMazeApp.swift; sourceTree = "<group>"; };
 		F7DC14632D2F0AA100CADA62 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -250,9 +262,10 @@
 		F7912BBC2D32CE8F007EF169 /* TVMazeTests */ = {
 			isa = PBXGroup;
 			children = (
+				F7912BF32D334741007EF169 /* Presentation */,
 				F7912BDC2D33426F007EF169 /* Domain */,
-				F7912BD82D333FC1007EF169 /* Mocks */,
 				F7912BD42D333F66007EF169 /* Data */,
+				F7912BD82D333FC1007EF169 /* Mocks */,
 			);
 			path = TVMazeTests;
 			sourceTree = "<group>";
@@ -292,6 +305,9 @@
 				F7912BE52D33448D007EF169 /* TVShowEpisodesRepositoryMock.swift */,
 				F7912BEB2D3345BC007EF169 /* FetchPeopleRepositoryMock.swift */,
 				F7912BF12D334682007EF169 /* SearchTVShowsRepositoryMock.swift */,
+				F7912BF72D3347EF007EF169 /* BiometricAuthenticationUseCaseMock.swift */,
+				F7912BFB2D334A22007EF169 /* FetchPeopleUseCaseMock.swift */,
+				F7912BFF2D334D00007EF169 /* FetchTVShowEpisodesUseCaseMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -305,6 +321,16 @@
 				F7912BEF2D33466D007EF169 /* SearchTVShowsUseCaseTests.swift */,
 			);
 			path = Domain;
+			sourceTree = "<group>";
+		};
+		F7912BF32D334741007EF169 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				F7912BF52D334756007EF169 /* BiometricAuthenticationViewModelTests.swift */,
+				F7912BF92D334953007EF169 /* PeopleSearchViewModelTests.swift */,
+				F7912BFD2D334AB6007EF169 /* TVShowDetailViewModelTests.swift */,
+			);
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 		F7DC14552D2F0AA100CADA62 = {
@@ -593,15 +619,21 @@
 				F7912BDA2D333FD2007EF169 /* NetworkClientMock.swift in Sources */,
 				F7912BE22D3343A1007EF169 /* TVShowEpisodesRepositoryTests.swift in Sources */,
 				F7912BEA2D3345A4007EF169 /* FetchPeopleUseCaseTests.swift in Sources */,
+				F7912BF82D3347EF007EF169 /* BiometricAuthenticationUseCaseMock.swift in Sources */,
 				F7912BDE2D334278007EF169 /* FetchTVShowsUseCaseTests.swift in Sources */,
 				F7912BD72D333F88007EF169 /* TVShowsRepositoryTests.swift in Sources */,
 				F7912BF02D33466D007EF169 /* SearchTVShowsUseCaseTests.swift in Sources */,
+				F7912BFE2D334AB6007EF169 /* TVShowDetailViewModelTests.swift in Sources */,
+				F7912BF62D334756007EF169 /* BiometricAuthenticationViewModelTests.swift in Sources */,
 				F7912BE42D334458007EF169 /* FetchTVShowEpisodesUseCaseTests.swift in Sources */,
+				F7912BFC2D334A22007EF169 /* FetchPeopleUseCaseMock.swift in Sources */,
+				F7912BFA2D334953007EF169 /* PeopleSearchViewModelTests.swift in Sources */,
 				F7912BF22D334682007EF169 /* SearchTVShowsRepositoryMock.swift in Sources */,
 				F7912BE62D33448D007EF169 /* TVShowEpisodesRepositoryMock.swift in Sources */,
 				F7912BEE2D33461A007EF169 /* SearchTVShowsRepositoryTests.swift in Sources */,
 				F7912BE82D33452D007EF169 /* FetchPeopleRepositoryTests.swift in Sources */,
 				F7912BEC2D3345BC007EF169 /* FetchPeopleRepositoryMock.swift in Sources */,
+				F7912C002D334D00007EF169 /* FetchTVShowEpisodesUseCaseMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
