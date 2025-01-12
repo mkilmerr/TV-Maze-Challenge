@@ -112,7 +112,7 @@ The project follows Clean Architecture principles with the following layers:
 
 <img src="https://github.com/user-attachments/assets/ec134490-db9f-45f0-83dc-bac2a66a0518" width="300"/>
 <img src="https://github.com/user-attachments/assets/6fae826e-06c8-4d70-83f8-1ba825d32775" width="300"/>
-<img src="https://github.com/user-attachments/assets/f115cf0a-980f-4757-94ff-44f5bf904c07" width="300"/>
+<img src="https://github.com/user-attachments/assets/0a6ea439-1ffc-4ebb-b729-626fbd843ddd" width="300"/>
 <img src="https://github.com/user-attachments/assets/e45d6ee8-5a36-4b3b-9e5e-2a46f774432b" width="300"/>
 
 #### Search People
@@ -122,4 +122,8 @@ The project follows Clean Architecture principles with the following layers:
 <img src="https://github.com/user-attachments/assets/e7b9d841-1658-46f3-a9ff-55b2718767dd" width="300"/>
 
 
+#### Favorite TV Shows
+
+<img src="https://github.com/user-attachments/assets/8861f599-41e7-4063-8869-7023312ebe2c" width="300"/>
+<img src="https://github.com/user-attachments/assets/0c0e68a6-4a94-456e-a969-d541ea1ca55b" width="300"/>
 
