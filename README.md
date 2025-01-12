@@ -126,4 +126,3 @@ The project follows Clean Architecture principles with the following layers:
 
 <img src="https://github.com/user-attachments/assets/8861f599-41e7-4063-8869-7023312ebe2c" width="300"/>
 <img src="https://github.com/user-attachments/assets/0c0e68a6-4a94-456e-a969-d541ea1ca55b" width="300"/>
-=
