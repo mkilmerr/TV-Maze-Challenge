@@ -111,6 +111,7 @@ final class TVShowsListViewModel: ObservableObject {
             isLoading = false
         } catch {
             isLoading = false
+            if mode == .favorite { return }
             isError = true
         }
     }
@@ -124,6 +125,7 @@ final class TVShowsListViewModel: ObservableObject {
             isLoading = false
         } catch {
             isLoading = false
+            if mode == .favorite { return }
             isError = true
         }
     }
