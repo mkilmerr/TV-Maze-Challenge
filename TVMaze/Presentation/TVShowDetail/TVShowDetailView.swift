@@ -100,10 +100,12 @@ struct TVShowDetailView: View {
                         )
                     }
                     
-                    Pill(
-                        text: "Schedule: \(String(describing: viewModel.show.scheduleDays?.joined(separator: ", "))) at \(viewModel.show.time)",
-                        color: .orange
-                    )
+                    if let scheduleDays = viewModel.show.scheduleDays {
+                        Pill(
+                            text: "Schedule: \(scheduleDays.joined(separator: ", ")) \(viewModel.show.time)",
+                            color: .orange
+                        )
+                    }
                 }
                 Spacer()
             }
