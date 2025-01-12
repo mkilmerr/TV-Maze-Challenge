@@ -44,5 +44,7 @@ struct TVShowSeasonHeaderView: View {
 }
 
 #Preview {
-    TVShowSeasonHeaderView(seasonEpisodes: .init(seasonNumber: 0, episodes: [.init(id: 0, url: "", name: "", season: 0, number: 0, type: "", airdate: "", airtime: "", airstamp: "", runtime: 0, rating: .init(average: 0), image: nil, summary: nil, links: .init(linksSelf: .init(href: "", name: nil), previousEpisode: nil))]))
+    TVShowSeasonHeaderView(
+        seasonEpisodes: EpisodeItemViewModel.mock()
+    )
 }

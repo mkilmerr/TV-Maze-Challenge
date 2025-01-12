@@ -8,12 +8,6 @@
 import Foundation
 import SwiftData
 
-struct EpisodeItemViewModel: Identifiable {
-    let id = UUID()
-    let seasonNumber: Int
-    let episodes: [Episode]
-}
-
 @MainActor
 final class TVShowDetailViewModel: ObservableObject {
     let show: TVShowRepresentable

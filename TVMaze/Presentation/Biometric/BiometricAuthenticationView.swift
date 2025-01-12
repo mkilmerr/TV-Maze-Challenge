@@ -47,3 +47,11 @@ struct BiometricAuthenticationView: View {
         }
     }
 }
+
+#Preview {
+    BiometricAuthenticationView(
+        viewModel: BiometricAuthenticationViewModel(
+            authenticationUseCase: BiometricAuthenticationUseCaseMock()
+        )
+    )
+}

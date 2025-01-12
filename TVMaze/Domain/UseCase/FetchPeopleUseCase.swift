@@ -7,6 +7,7 @@
 
 import Foundation
 
+//MARK: UseCase
 protocol FetchPeopleUseCaseProtocol {
     func execute(name: String) async throws -> [PersonSearched]
 }
@@ -20,5 +21,12 @@ final class FetchPeopleUseCase: FetchPeopleUseCaseProtocol {
 
     func execute(name: String) async throws -> [PersonSearched] {
         try await repository.fetchPeople(name: name)
+    }
+}
+
+// MARK: Mock
+final class FetchPeopleUseCaseMock: FetchPeopleUseCaseProtocol {
+    func execute(name: String) async throws -> [PersonSearched] {
+        return PersonSearched.mock()
     }
 }

@@ -40,6 +40,7 @@
 		F7912BB62D32B51D007EF169 /* SearchTVShowsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7912BB52D32B51D007EF169 /* SearchTVShowsUseCase.swift */; };
 		F7912BBE2D32CE8F007EF169 /* TVMazeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7912BBD2D32CE8F007EF169 /* TVMazeTests.swift */; };
 		F7912BC62D32D9B4007EF169 /* TVShowLocalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7912BC52D32D9B4007EF169 /* TVShowLocalData.swift */; };
+		F7912BD32D333CDF007EF169 /* EpisodeItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7912BD22D333CDF007EF169 /* EpisodeItemViewModel.swift */; };
 		F7DC14622D2F0AA100CADA62 /* TVMazeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DC14612D2F0AA100CADA62 /* TVMazeApp.swift */; };
 		F7DC14642D2F0AA100CADA62 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DC14632D2F0AA100CADA62 /* ContentView.swift */; };
 		F7DC14662D2F0AA200CADA62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7DC14652D2F0AA200CADA62 /* Assets.xcassets */; };
@@ -118,6 +119,7 @@
 		F7912BBB2D32CE8F007EF169 /* TVMazeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TVMazeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7912BBD2D32CE8F007EF169 /* TVMazeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVMazeTests.swift; sourceTree = "<group>"; };
 		F7912BC52D32D9B4007EF169 /* TVShowLocalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowLocalData.swift; sourceTree = "<group>"; };
+		F7912BD22D333CDF007EF169 /* EpisodeItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeItemViewModel.swift; sourceTree = "<group>"; };
 		F7DC145E2D2F0AA100CADA62 /* TVMaze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVMaze.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7DC14612D2F0AA100CADA62 /* TVMazeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVMazeApp.swift; sourceTree = "<group>"; };
 		F7DC14632D2F0AA100CADA62 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 			children = (
 				F71338742D30582400331DDE /* EpisodeRowView.swift */,
 				F71338772D306B1F00331DDE /* EpisodeDetailView.swift */,
+				F7912BD22D333CDF007EF169 /* EpisodeItemViewModel.swift */,
 			);
 			path = Episode;
 			sourceTree = "<group>";
@@ -553,6 +556,7 @@
 				F7912BB42D32B4B2007EF169 /* SearchTVShowsRepository.swift in Sources */,
 				F7DC14852D2F21ED00CADA62 /* WebChannel.swift in Sources */,
 				F7DC14712D2F0BF000CADA62 /* NetworkClient.swift in Sources */,
+				F7912BD32D333CDF007EF169 /* EpisodeItemViewModel.swift in Sources */,
 				F7DC14872D2F21FF00CADA62 /* Externals.swift in Sources */,
 				F7912BB02D32B40E007EF169 /* SearchTVShowsEndpoint.swift in Sources */,
 				F713387C2D30737C00331DDE /* String+RemoveHTML.swift in Sources */,

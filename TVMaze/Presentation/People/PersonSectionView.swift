@@ -53,6 +53,8 @@ struct PersonSectionView: View {
     }
 }
 
-//#Preview {
-//    PersonSectionView()
-//}
+#Preview {
+    PersonSectionView(
+        person: Person.mock(), action: { _ in }
+    )
+}

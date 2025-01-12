@@ -140,12 +140,3 @@ struct TVShowsListView: View {
         }
     }
 }
-
-//#Preview {
-//    TVShowsListView(
-//        viewModel: .init(
-//            fetchTVShowsUseCase: FetchTVShowsUseCaseMock(),
-//            searchTVShowUseCase: SearchTVShowsUseCaseMock()
-//        )
-//    )
-//}

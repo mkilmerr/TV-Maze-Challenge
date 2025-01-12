@@ -7,7 +7,7 @@
 
 import Foundation
 
-// MARK: UseCse
+// MARK: UseCase
 protocol SearchTVShowsUseCaseProtocol {
     func execute(name: String) async throws -> [TVShowSearched]
 }
@@ -25,8 +25,10 @@ final class SearchTVShowsUseCase: SearchTVShowsUseCaseProtocol {
 }
 
 // MARK: Mock
-//final class SearchTVShowsUseCaseMock: SearchTVShowsUseCaseProtocol {
-//    func execute(name: String) async throws -> [TVShowSearched] {
-//        TVShow.mockShows()
-//    }
-//}
+final class SearchTVShowsUseCaseMock: SearchTVShowsUseCaseProtocol {
+    var called: Bool = false
+    func execute(name: String) async throws -> [TVShowSearched] {
+        called.toggle()
+        return [TVShowSearched.mock()]
+    }
+}

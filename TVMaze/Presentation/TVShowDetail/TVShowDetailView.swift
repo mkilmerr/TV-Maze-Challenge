@@ -174,7 +174,11 @@ struct TVShowDetailView: View {
     }
 }
 
-//#Preview {
-//    TVShowDetailView(viewModel: .)
-//    TVShowDetailView(show: TVShow.mockShows().first!)
-//}
+#Preview {
+    TVShowDetailView(
+        viewModel: TVShowDetailViewModel(
+            fetchEpisodesUseCase: FetchTVShowSeasonsUseCaseMock(),
+            show: TVShow.mockShows()[0])
+    )
+}
+

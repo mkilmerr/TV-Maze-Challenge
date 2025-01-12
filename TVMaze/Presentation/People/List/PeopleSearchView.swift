@@ -82,3 +82,11 @@ struct PeopleSearchView: View {
         }
     }
 }
+
+#Preview {
+    PeopleSearchView(
+        viewModel: PeopleSearchViewModel(
+            fetchPeopleUseCase: FetchPeopleUseCaseMock()
+        )
+    )
+}

@@ -68,7 +68,7 @@ struct TVShow: Decodable, Identifiable, TVShowRepresentable {
 }
 
 
-// MARK: - Preview Helpers
+// MARK: Mock
 extension TVShow {
     static func mockShows() -> [TVShow] {
         return [
@@ -123,5 +123,14 @@ extension TVShow {
                 links: LinksReference(linksSelf: LinkReference(href: "https://api.tvmaze.com/shows/2", name: nil), previousEpisode: LinkReference(href: "https://api.tvmaze.com/episodes/2", name: nil))
             )
         ]
+    }
+}
+
+extension TVShowSearched {
+    static func mock() -> TVShowSearched {
+        return .init(
+            score: 0,
+            show: TVShow.mockShows()[0]
+        )
     }
 }

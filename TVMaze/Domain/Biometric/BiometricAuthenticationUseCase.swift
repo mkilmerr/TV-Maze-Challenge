@@ -7,6 +7,7 @@
 
 import Foundation
 
+//MARK: UseCase
 protocol BiometricAuthenticationUseCaseProtocol {
     func authenticate() async throws
     func isBiometricAvailable() -> Bool
@@ -25,5 +26,23 @@ final class BiometricAuthenticationUseCase: BiometricAuthenticationUseCaseProtoc
     
     func isBiometricAvailable() -> Bool {
         return biometricAuth.biometricType() != .none
+    }
+}
+
+// MARK: Mock
+final class BiometricAuthenticationUseCaseMock: BiometricAuthenticationUseCaseProtocol {
+    var authenticateCalled: Bool = false
+    let available: Bool
+    
+    init(available: Bool = false) {
+        self.available = available
+    }
+    
+    func authenticate() async throws {
+        authenticateCalled.toggle()
+    }
+    
+    func isBiometricAvailable() -> Bool {
+        available
     }
 }

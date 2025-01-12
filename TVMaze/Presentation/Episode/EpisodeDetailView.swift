@@ -51,6 +51,5 @@ struct EpisodeDetailView: View {
 }
 
 #Preview {
-    EpisodeDetailView(episode: .init(id: 0, url: "", name: "", season: 0, number: 0, type: "", airdate: "", airtime: "", airstamp: "", runtime: 0, rating: .init(average: nil), image: nil, summary: nil, links: .init(linksSelf: .init(href: "", name: nil), previousEpisode: nil))
-    )
+    EpisodeDetailView(episode: Episode.mock())
 }
