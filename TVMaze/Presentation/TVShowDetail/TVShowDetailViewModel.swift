@@ -32,7 +32,7 @@ final class TVShowDetailViewModel: ObservableObject {
             episodes = getGroupedEpisodesBySeason(episodes: episodesResponse)
             isLoading = false
         } catch {
-            isError.toggle()
+            isError = true
             isLoading = false
         }
     }

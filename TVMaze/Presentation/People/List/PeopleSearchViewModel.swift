@@ -29,7 +29,7 @@ final class PeopleSearchViewModel: ObservableObject {
             people = try await fetchPeopleUseCase.execute(name: name)
         } catch {
             people.removeAll()
-            isError.toggle()
+            isError = true
         }
     }
 
